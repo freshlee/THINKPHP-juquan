@@ -6,53 +6,18 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <script language="javascript" type="text/javascript" src="/Public/Home/js/conn.js"></script>
-<script type="text/javascript" src="http://m.mede.com.cn/js/jquery.1.7.1.min.js"></script>
+<script type="text/javascript" src="/Public/Admin/js/jquery-1.7.js"></script>
 <link type="text/css" rel="stylesheet" href="/Public/Home/css/style_6.css" />
 <link type="text/css" rel="stylesheet" href="/Public/Home/css/pages_6.css" />
 <script type="text/javascript" src="/Public/Home/js/nva.js"></script>
 
-<script type="text/javascript" language="javascript">
-$(function(){
-	$.post("/getqq.php",function(txt){
-	if(txt!=""){
-	$("ul[attr='dqq'] li a").attr("href","http://wpa.qq.com/msgrd?v=3&uin="+txt+"&site=www.mede.com.cn&menu=yes");
-	$("p[attr='aqq'] a").attr("href","http://wpa.qq.com/msgrd?v=3&uin="+txt+"&site=www.mede.com.cn&menu=yes");
-	} 
-	})
-})
 
-$(function(){
-	$.post("/kecun.php",function(txt){
-	if(txt!=""){
-	$("ul[attr='kecun'] li a").attr("href","http://wpa.qq.com/msgrd?v=3&uin="+txt+"&site=www.mede.com.cn&menu=yes");
-    $("p[attr='kecun'] a").attr("href","http://wpa.qq.com/msgrd?v=3&uin="+txt+"&site=www.mede.com.cn&menu=yes");
-	} 
-	})
-})
-
-$(function(){
-	$.post("/yantang.php",function(txt){
-	if(txt!=""){
-	$("ul[attr='yantang'] li a").attr("href","http://wpa.qq.com/msgrd?v=3&uin="+txt+"&site=www.mede.com.cn&menu=yes");
-    $("p[attr='yantang'] a").attr("href","http://wpa.qq.com/msgrd?v=3&uin="+txt+"&site=www.mede.com.cn&menu=yes");
-	} 
-	})
-})
-
-$(function(){
-	$.post("/chebei.php",function(txt){
-	if(txt!=""){
-	$("ul[attr='chebei'] li a").attr("href","http://wpa.qq.com/msgrd?v=3&uin="+txt+"&site=www.mede.com.cn&menu=yes");
-    $("p[attr='chebei'] a").attr("href","http://wpa.qq.com/msgrd?v=3&uin="+txt+"&site=www.mede.com.cn&menu=yes");
-	} 
-	})
-})
-</script>
 <style type="text/css">
 .intxt{border: 1px solid #dddddd; border-radius: 4px; color: #666; height: 20px; line-height: 20px; padding: 10px 5px; width: 60%;}
 .div_form{margin-bottom:15px; float:left; text-align:right; height:46px; line-height:56px; width:100%; font-weight:bold;}
 .coolbg{width:62%; height:60px; text-align:center; font:bold 16px/60px '宋体'; border:0 none; border-radius:4px; color:#fff; cursor:pointer; background:#009fe3;letter-spacing:6px;}
 .span{padding-right:2%;}
+p[plugin="plugin"]{color: red}
 </style>
 </head>
 
@@ -344,7 +309,7 @@ $(function(){
 		<div class="position">您现在的位置是：<a href='http://www.mede.com.cn'>美迪首页</a> > <a href='/EnrollProcess/'>报名流程</a> > </div>
 		<div class="about_body">
         <h2>网上报名</h2>
-<form class="f1" action="/EnrollProcess/baoming.php?act=baoming" method="post" id="baoming_form">
+<form class="f1"  method="post" id="applicaion_form">
 <table width=100% >
 <tbody>
 <tr ><td width=15% align="right" class="div_form">姓 名：</td>
@@ -360,49 +325,49 @@ $(function(){
 </style>
 <div class="k_c">
 	<h1>淘宝天猫课程</h1>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="7" />淘宝开店创业班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="8" />淘宝美工店长班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="9" />淘宝运营推广班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="10" />淘宝高级美工班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="11" />淘宝推广实战班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="12" />天猫运营总裁班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="13" />阿里巴巴总裁班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="14" />淘宝全能班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="15" />高级店长培训班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="7" />淘宝开店创业班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="8" />淘宝美工店长班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="9" />淘宝运营推广班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="10" />淘宝高级美工班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="11" />淘宝推广实战班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="12" />天猫运营总裁班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="13" />阿里巴巴总裁班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="14" />淘宝全能班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="15" />高级店长培训班</div>
 </div>
 <div class="k_c">
 	<h1>微商电商课程</h1>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="16" />微信开店创业班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="17" />微信营销总裁班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="18" />高级微信运营推广班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="19" />微商导师班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="16" />微信开店创业班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="17" />微信营销总裁班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="18" />高级微信运营推广班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="19" />微商导师班</div>
 </div>
 <div class="k_c">
 	<h1>京东培训课程</h1>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="20" />京东开店创业班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="21" />京东美工店长班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="22" />京东运营推广班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="23" />京东快车高级班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="20" />京东开店创业班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="21" />京东美工店长班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="22" />京东运营推广班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="23" />京东快车高级班</div>
 </div>
 <div class="k_c">
 	<h1>跨境电商课程</h1>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="24" />速卖通总裁班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="25" />亚马逊开店创业班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="26" />亚马逊运营推广班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="27" />wish运营总裁班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="24" />速卖通总裁班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="25" />亚马逊开店创业班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="26" />亚马逊运营推广班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="27" />wish运营总裁班</div>
 </div>
 <div class="k_c">
 	<h1>摄影培训课程</h1>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="28" />淘宝静物摄影班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="29" />淘宝模特摄影班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="30" />高级产品修图班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="28" />淘宝静物摄影班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="29" />淘宝模特摄影班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="30" />高级产品修图班</div>
 </div>
 <div class="k_c">
 	<h1>就业培训课程</h1>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="31" />网店美工就业班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="32" />网店运营推广就业班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="33" />微信运营推广就业班</div>
-    <div class="k_c_x"><input type="checkbox" name="kecheng[]" value="34" />跨境电商就业班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="31" />网店美工就业班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="32" />网店运营推广就业班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="33" />微信运营推广就业班</div>
+    <div class="k_c_x"><input type="checkbox" name="course[]" value="34" />跨境电商就业班</div>
 </div>
 </td>
 </tr>
@@ -415,7 +380,7 @@ $(function(){
 <tr>
 	<td width=15% align="right" class="div_form">上课时间段：</td>
     <td class="right">
-    	<select name="shijianduan">
+    	<select name="period">
         	<option value="1">上午</option>
             <option value="2">下午</option>
             <option value="3">晚上</option>
@@ -428,11 +393,14 @@ $(function(){
 <tr ><td width=15% align="right" class="div_form">Q Q：</td>
 <td class="right"><input type="text" id="t4" name="qq" class="intxt"></td>
 </tr>
+<tr ><td width=15% align="right" class="div_form">邮箱：</td>
+<td class="right"><input type="text" id="t5" name="email" class="intxt"></td>
+</tr>
 <tr ><td width=15% align="right" class="div_form">微 信：</td>
-<td class="right"><input type="text" id="t5" name="weixin" class="intxt"></td>
+<td class="right"><input type="text" id="t6" name="wechat" class="intxt"></td>
 </tr>
 <tr><td width=15% align="right" class="div_form">备 注：</td> 
-<td><textarea id="txtarea" name="beizhu" style="width:100%; height:300px; margin-bottom:15px; border: 1px solid #dddddd; border-radius: 4px; color: #666;"></textarea></td> 
+<td><textarea id="txtarea" name="remark" style="width:100%; height:300px; margin-bottom:15px; border: 1px solid #dddddd; border-radius: 4px; color: #666;"></textarea></td> 
 </tr> 
 <tr><td width=15% align="right" class="div_form"></td>
 <td><input id="Submit1" type="button" class="coolbg" value="立即报名" onclick="check_form();" /> </td>
@@ -637,29 +605,71 @@ $(".right_scroll_contextitle_close").click(function(){
         
         
 <script type="text/javascript">
-	function check_form(){
-		var name = $("input[name=Name]").val();
-		if(name == ''){
-			alert("姓名不有为空，请填写姓名");
-			return false;
-		}
-		var tel = $("input[name=tel]").val();
-		if(tel == ''){
-			alert("电话不能为空，请输入电话号码");return false;
-		}
-		if(!tel.match(/^1[3|4|5|7|8]\d{9}$/)){
-			alert("手机号码格式不正确！请重新输入");return false;
-		}
-		var qq = $("input[name=qq]").val();
-		if(qq == ''){
-			alert("QQ不能为空，请输入QQ号码");return false;
-		}
-		var sk_time = $("input[name=ConsultationDate]").val();
-		if(sk_time == ''){
-			alert("上课时间不能为空");return false;
-		}
-		$("#baoming_form").submit();
-	}
+
+$(document).ready(function(){
+	//封装函数
+	function alertinfo(info,element) {
+    if (info) {
+        if (!element.next("p[plugin=plugin]").length) {
+            element.after("<p plugin='plugin'>"+info+"</p>");
+
+
+        } else {
+            element.next("p[plugin=plugin]").text(info);
+
+        }
+    }
+ else {
+    if (element.next("p[plugin=plugin]")) {
+        element.next("p[plugin=plugin]").remove();
+
+    }
+}
+
+}
+	$("input[name=Name]").change(function(){
+	 var name=$(this).val();
+	 var element=$(this);
+	 if(name.length>10){alertinfo("名字长度不能超过10",element)}
+     else{alertinfo("",element)}
+});
+	$("input[name=email]").change(function(){
+	 var email=$(this).val();
+	 var element=$(this);
+	 var regexp=/^[0-9A-Za-z-]+@\w+.com$/;
+	 var res=regexp.test(email);
+	 console.log(res);
+	 if(!res){alertinfo("邮件格式不对",element)}
+     else{alertinfo("",element)}
+});
+
+	$("#Submit1").click(function(){
+		var allcheckbox=$("input[name='course[]']:checked");
+		if(!allcheckbox.length){
+			var element=$("tbody tr:eq(1)");
+			alertinfo("请选择课程",element);
+			return false;}
+        var elements=$("input").not("checkbox");
+        elements.each(function(){
+             if(!$(this).val()){
+             	alert("请输入完整信息");
+             	return false;
+             	}
+        });
+	     $.ajax({
+
+	 	url:"/Home/Index/message",
+	 	type:"POST",
+	 	data:$(this).parents("form").serialize(),
+	 	async:false,        
+	 })
+
+	});
+  
+
+
+
+});
 </script>
 	
  <link href="http://oa.taodashi.com/public/plugin/date-time/datepicker.css" type="text/css" rel="stylesheet" />

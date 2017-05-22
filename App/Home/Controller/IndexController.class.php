@@ -9,8 +9,73 @@ class IndexController extends Controller {
         //$this->show('<style type="text/css">*{ padding: 0; margin: 0; } div{ padding: 4px 48px;} body{ background: #fff; font-family: "微软雅黑"; color: #333;font-size:24px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.8em; font-size: 36px }</style><div style="padding: 24px 48px;"> <h1>:)</h1><p>欢迎使用 <b>ThinkPHP</b>！</p><br/>[ 您现在访问的是Home模块的Index控制器 ]</div><script type="text/javascript" src="http://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script>','utf-8');
    $this->display('home');
     }
+   
 
+    function connection(){
+            $conres=mysql_connect("localhost","root","root");
+            if(!$conres){exit("数据库链接失败");}
+            $res=mysql_select_db("education",$conres);
 
+        }
+        //插入行 测试结果：INSERT INTOtable(name,id)VALUES('lee','2012107210')
+    function add($table,$array){
+                $key=join(",", array_keys($array));
+                $value=join("','",array_values($array));
+                $query="INSERT INTO".$table."(".$key.")"."VALUES('".$value."')";
+                mysql_query($query);
+            }
+            //生成where;
+    function concretion(&$value,$key){
+                    $value=$key."='".$value."'";
+                }
+                //删除行 测试结果 DELETE FROMtableWHEREname='lee'ANDid='2012107210'
+    function del($table,$where){
+                    
+                 array_walk($where, concretion);
+                $concrete=join("AND", $where);
+                $query="DELETE FROM".$table."WHERE".$concrete;
+                $result=mysql_query($query);
+                 $res=array();
+                while ($row=mysql_fetch_array($result)){
+                    array_push($res, $row);
+                }
+                return $res;
+                    }
+                    //更新 测试结果 UPDATEtableSETid='2012107210',name='lee'WHEREid='2012107210'
+   function update($table,$data,$where){
+                array_walk($where, concretion);
+                array_walk($data, concretion);
+                $where=join("AND", $where);
+                $data=join(",", $data);
+                $query="UPDATE".$table."SET".$data."WHERE".$where;
+                $result=mysql_query($query);
+                $res=array();
+                while ($row=mysql_fetch_array($result)){
+                    array_push($res, $row);
+                }
+                return $res;
+            }
+            
+                        
+                        
+                        
+                        
+         //查
+    function select($table,$field="*",$where){
+            array_walk($where, concretion);
+            $where=join("AND", $where);
+            if(is_array($field))
+            {$field=join(",", $field);}
+            if($where){$where="WHERE".$where;}
+            $query="SELECT ".$field. " FROM ".$table.$where;
+            $result=mysql_query($query);
+            $res=array();
+            while( $row = mysql_fetch_array($result)){
+                 array_push($res, $row);
+            }
+            return $res;
+            }
+                            
     public function home(){
         $this->display();
     }
@@ -110,6 +175,28 @@ class IndexController extends Controller {
         $this->assign("list",$list_data);
         $this->display();
     }
+    
+    
+    
+    //留言信息
+    
+    
+    
+    public function EnrollProcess(){
+          $this->connection();
+          $course=$this->select("course");
+          $courselist=$this->select("courselist");
+          $this->assign("course",$course);
+          $this->assign("courselist",$courselist);
+          $this->display();
+    }
+    public function message(){
+        $message=new Model('message');
+        $res=$message->create();
+        dump($res);
+        $message->add();
+        $this->display();
+    }
     function ck_adlogin(){  //管理员登录
         session_start();
         $user=M('admin');
@@ -130,6 +217,7 @@ class IndexController extends Controller {
     public function Login(){
         $this->display();
     }
+    
     function VerifyImg(){
         $config=array(
             'fontSize'  =>  15,              // 楠岃瘉鐮佸瓧浣撳ぇ灏�(p
