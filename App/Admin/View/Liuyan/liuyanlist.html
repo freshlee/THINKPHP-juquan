@@ -65,20 +65,7 @@ trObj.style.backgroundColor=oldColor;
     <tr>
       <td align="left">
 	  
-     <!-- <input name="search_type"   id="search_type" type="radio"  value="title" checked />
-        按名称 
-        <input type='text' name='KeyWord' id='KeyWord' value="">
-        <input name="search_type"  id="search_type"  type="radio"  value="type" /> 按类型
-		
-		<select name="tid" onChange="InfoSort()" >
-		 <option value="All" >－－全部－－</option>             
-            <volist name="list" id="cat">
-				<option value="{<$cat.id>}">{<$cat.name>}</option>				
-			</volist>
-            </select>
-      
-        <input type='submit' value='搜索' name='Search' id='Search' class="button">-->
-  <!--      <a href="__URL__/add"><input type="button" value='添加商品'  class="button" style="float:right; margin-right:50px;"></a>-->
+
       </td>
     </tr>
   </table>
@@ -111,21 +98,7 @@ trObj.style.backgroundColor=oldColor;
     </tr>
    </volist> 
     </table>
-</div><!--<div class="ttbom">
-<select  name="ProjectType1" id="ProjectType1" onChange="InfoSort1()">
-		　　 <option  value="All" >--所属类别--</option>
-            <volist id="newstype_info" name="list">
-             <option value="{<$newstype_info.ProjectTypeID>}">{<$newstype_info.ProjectTypeName>}</option>               
-           </volist>           
-        </select>
-          <span id="SubType1"><select name="ProjectSubTypeID1" id="ProjectSubTypeID1">
-           <option>--所属子类别--</option>
-           <option ></option>   
-        </select></span>
-  <input type='button' value='移动数据' onClick='moveNews();' class="button"> &nbsp; <input name="按钮" type='button' class="button" onClick="delAllNews()" value='删除所选'> &nbsp; <input type='checkbox' name='chkall' onClick='CheckAll(this.form)' value='ON'>全选</div>-->
-<!--  <div class="ttbom">
-<input name="按钮" type='button' class="button" onClick="delAllNews()" value='删除所选'> &nbsp; 
-<input type='checkbox' name='chkall' onClick='CheckAll(this.form)' value='ON'>全选</div>-->
+</div>
 <div class="{<$pagestyle>}">{<$page>}</div>
 </form>
   <br>
