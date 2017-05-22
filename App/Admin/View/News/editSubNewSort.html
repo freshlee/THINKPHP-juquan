@@ -1,0 +1,52 @@
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/Admin.css">
+<script type="text/javascript" src="__PUBLIC__/Admin/js/admin.js"></script>
+
+<title>服务项目编辑</title>
+</head>
+<body>
+
+<div class='menu'>&nbsp;编辑分类</div>
+
+<div class="content">
+  <table width="98%" border="0" cellspacing="0" cellpAdding="5" align="center" class="table">
+    <Form name='EditForm' method='post' action='__URL__/updateNewSort'>
+	<input name="InformationTypeId" type="hidden" id="InformationTypeId" value="{<$newstype_info.InformationTypeID>}">
+    <tr>
+      <th align="center">所属分类</td>
+      <td><select name="InformationTypesId" id="InformationTypesId">
+          <option value="{<$fatnewtype_info.InformationTypeID>}">{<$fatnewtype_info.InformationTypeName>}</option>         
+          
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th align="center">资讯分类名称</td>
+      <td><input name="InformationTypeName" type="text" id="InformationTypeName" value="{<$newstype_info.InformationTypeName>}"></td>
+    </tr>
+    
+   
+    <tr>
+      <th align="center">资讯类别排序</td>
+      <td><input name="InformationTypeOrder" type="text" value="{<$newstype_info.InformationTypeOrder>}" size="4" id="InformationTypeOrder"></td>
+    </tr>
+	
+	
+    
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" value="保 存" class="button">
+        &nbsp;&nbsp;
+        <input type="button" value="返 回" onClick="history.go(-1);" class="button">
+      </td>
+    </tr>
+    </form>
+  </table>
+  <br>
+</div>
+<br>
+</body>
+</html>
+                                                                                       

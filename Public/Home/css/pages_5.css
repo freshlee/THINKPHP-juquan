@@ -1,0 +1,734 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+   h1,h2,h3,h4,ul,li,dl,dt,dd{ display:block; list-style:none; margin:0; padding:0;font-family:"Microsoft YaHei","Tahoma";}
+img{border:0;}
+a{font-family:"Microsoft YaHei","Tahoma";}
+.stm_bg{ background:#c02023}
+.kefu_bg{ background:#0064bf}
+body{ margin:0; padding:0; background-attachment:fixed;font-size:12px; color:#666666; line-height:140%;font-family:"Microsoft YaHei","Tahoma";}
+
+.thisclass:link{ color:#fff}
+.thisclass:visited{ color:#fff}
+.thisclass:hover{ color:#fff}
+.thisclass:active{ color:#fff}
+.position{ width:100%; text-indent:20px; height:49px; line-height:49px; border-top:1px solid #CCCCCC; border-left:1px solid #CCCCCC;border-right:1px solid #CCCCCC;border-radius:5px 5px 0 0; background:url(../images/kuai2.jpg); color:#333; font-size:14px;}
+.clear{ clear:both; height:0;}
+.spacing{ border-bottom:1px dashed #dddcdc; margin-bottom:5px; padding-bottom:5px;}
+/*.pages{ width:100%; height:25px; border:1px solid #CCCCCC; background:#FFFFFF; margin-top:10px; padding:10px 0; border-radius:5px; }
+.pages ul li{ float:left; border:1px solid #dddcdc; padding:3px 10px; margin-left:10px; border-radius:3px; background:url(../images/content3_titlebg.jpg);}
+.pages ul li a{display:block; list-style:none; margin:0;  }
+.pages ul li a:hover{ text-decoration:none;}*/
+/* 列表分页 */
+.pagebar{padding-top:15px; display:table;}
+.pagebar li{display:block; height:25PX; line-height:25PX; list-style:none;  float:left; text-align:center; margin-right:8PX; text-align:center;}
+.pagebar li select{height:25px;}
+.pagebar a{display:block; list-style:none; padding:0 12px; border:1px solid #E1E1E1; color:#000;}  
+.pagebar a:hover{background:#008ec6; color:#FFFFFF; text-decoration:none;}
+.thisclass{padding:0px 15px; font-weight:bold; background:#008ec6; color:#FFFFFF;}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #0169aa;
+}
+a:active {
+	text-decoration: none;
+}
+.index_ad1{ width:1000px; height:90px; margin:10px auto 0 auto;}
+
+.Head{ width:100%; height:100px; background:#f9f9f9;}
+.Head_box{ width:1000px; height:100px; margin:0 auto 0 auto;}
+.logo{ width:438px; height:70px; margin-top:15px; float:left;}
+.Head_right{ width:371px; float:right; height:auto; margin-top:12px;}
+.head_tel{ width:371px; height:72px; background:url(../images/tel400.png) right no-repeat;}
+
+.nva_box{ width:100%; height:50px; background:#000000; margin:0;}
+.nva_box ul{ width:1000px; height:50px; margin:0 auto 0 auto;}
+.nva_box ul li{ width:110px; height:50px; line-height:50px; text-align:center; float:left;font-size:16px;}
+.nva_box ul li a{ display:block; list-style:none; width:110px; height:50px; color:#FFFFFF;}
+.nva_box ul li a:hover{ background:#252525; text-decoration:none;}
+.nva_box ul li a:visited {color:#fff; }
+
+#nav li ul {list-style-type: none;text-align:left;left: -999em;*+margin-left:-55px; z-index:999; height:auto; width: 180px; position: absolute;}
+#nav li ul li{ float: left; width: 180px; background:#252525;height:35px; line-height:35px; font-size:16px;}
+#nav li ul a{ display: block; height:35px; width: 156px;text-align:left; padding-left:24px;}
+#nav li ul a:hover{color:#0169aa; width: 156px; height:35px;text-decoration:none;font-weight:normal; background:#000;}
+#nav li ul a:visited {color:#fff; }
+
+
+#nav li:hover ul {left: auto;}
+#nav li.sfhover ul { left: auto;}
+
+.slidetabs a{outline: none;background-image:url(../images/round.png);  background-repeat:no-repeat; *background-image:none;/*IE6*/border:none; *filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/round.png', sizingMethod='scale');}
+.slidetabs a:hover, .slidetabs .a_hover{background-image:url(../images/round_hover.png);  background-repeat:no-repeat; *background-image:none;/*IE6*/border:none; *filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/round_hover.png', sizingMethod='scale');}
+.foot_showed{background-image:url(../images/foot_showed.png);  background-repeat:no-repeat; *background-image:none;/*IE6*/border:none; *filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/foot_showed.png', sizingMethod='scale');}
+.top_news{margin:0 auto;width:960px;color:#f00;line-height:25px;font-size:14px;position:relative;}
+.top_news_img{float:left;background:url(../images/top_news.gif) center left no-repeat;height:24px;padding-left:20px;color:#000;}
+#demo{height:25px;line-height:25px;overflow:hidden;width:945px;position:absolute;left:55px;top:0;}
+
+
+
+#demo p{width:3000px;margin:0;line-height:25px;}
+#demo1,#demo2{padding-right:90px;line-height:25px;}
+
+.advice{ width:100%; height:35px; background:#D23405;  position:fixed; !important position:absolute; bottom:0;}
+* html .advice {position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));} 
+
+.advice_box{ width:1000px; height:35px; line-height:35px; margin:0 auto 0 auto; color:#FFFFFF; font-size:16px;}
+.advice_tel{ width:450px; height:35px; line-height:35px; float:left; text-indent:40px;}
+.advice_qq{ width:400px; height:35px; line-height:35px; float:left; text-indent:5px}
+.advice_qq a{ display:block; list-style:none; float:left; margin-left:10px; margin-top:5px;}
+/*会场信息*/
+.meeting_hall_info{width: 850px;padding-bottom: 20px; height:auto; display:table;background-color: #FFF;margin: 0 auto;}
+.sy_hall_info{ width:95%; padding-bottom:30px; background-color:#FFF; margin:0 auto; margin-bottom:20px; border:2px solid #FFFFFF;}
+.hall_trace{ margin-right:10px; padding-top:20px; width:372px; float:left; display:inline;}
+.sy_trace{ padding-left:10px; padding-top:20px; width:362px; float:left; display:inline;}
+.hall_address_title h5{ font-size:20px; color:#646464; height:40px; line-height:40px; margin-bottom:8px; margin-top:4px;}
+.hall_address_detail{ font-size: 16px; font-weight: bold; color: #004f94; height: 25px;}
+.hall_address_info{color:#323232; font-size:12px; margin-top:5px;}
+.hall_address{margin-bottom:0px;}
+.hall_trafic {margin-bottom:22px;}
+.hall_trafic dt,.room_title{ font-size:14px;  color:#89c000; margin-bottom:13px; font-weight:bold;}
+.hall_trafic dd{ font-size:12px; color:#646464; margin-bottom:8px;}
+.trafic_method{ background-color:#89c000; color:#FFF; font-weight:bold; font-style:normal; padding-left:3px; padding-top:2px;padding-bottom:2px;}
+.tjiudian_method{ background-color:#906; color:#FFF; font-weight:bold; font-style:normal; padding-left:3px; padding-top:2px; padding-bottom:2px;}
+
+.hall_trafic span{ width:270px; line-height:20px; position:relative; top:0px;}
+.hall_trafic .taobao_trafic{width:288px;}
+.hall_trafic span b{ display:inline-block; margin-top:5px;}
+.room_title{ color:#314d84;margin-bottom: 0px}
+.room_con{font-size:12px; color:#646464; line-height: 25px; }
+.room_con a{ margin-right:10px;}
+.near_hotel dt{ margin:5px 0px;}
+.near_hotel_name{ background-color:#314d84; padding:2px 0px 2px 2px;}
+.near_hotel dd{ line-height:20px; color:#646464;}
+/*新主题*/
+.soures_banner_box{ width:100%; height:350px;}
+.sy_banner_box{ width:100%; height:450px;}
+
+.ali_banner_box{ width:100%; height:350px;}
+.smt_banner_box{ width:100%; height:350px;}
+.kefu_banner_box{ width:100%; height:350px;}
+.mgjy_banner_box{ width:100%; height:350px;  }
+.wuxian_banner_box{ width:100%; height:350px;}
+.gaoji_banner_box{ width:100%; height:350px;}
+.mtsy_banner_box{ width:100%; height:350px;}
+
+.soures1_banner{ width:950px; height:350px; background:url(../images/s1.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures2_banner{ width:950px; height:350px; background:url(../images/s2.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures3_banner{ width:950px; height:350px; background:url(../images/s3.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures4_banner{ width:100%; height:350px; background:url(../images/s4.jpg) no-repeat center; margin:0px auto 0 auto;}
+.soures5_banner{ width:950px; height:350px; background:url(../images/s5.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures6_banner{ width:950px; height:400px; background:url(../images/s6.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures7_banner{ width:950px; height:350px; background:url(../images/s7.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures8_banner{ width:950px; height:350px; background:url(../images/s8.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures9_banner{ width:950px; height:350px; background:url(../images/s9.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures10_banner{ width:950px; height:350px; background:url(../images/s10.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures11_banner{ width:950px; height:350px; background:url(../images/s11.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures12_banner{ width:950px; height:350px; background:url(../images/s12.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures13_banner{ width:950px; height:350px; background:url(../images/s13.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures14_banner{ width:950px; height:350px; background:url(../images/s14.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures15_banner{ width:950px; height:350px; background:url(../images/s15.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures16_banner{ width:950px; height:350px; background:url(../images/s16.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures17_banner{ width:950px; height:350px; background:url(../images/s17.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures18_banner{ width:950px; height:350px; background:url(../images/s18.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures19_banner{ width:950px; height:350px; background:url(../images/s19.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures20_banner{ width:950px; height:350px; background:url(../images/s20.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures21_banner{ width:100%; height:450px; background:url(../images/s21.jpg) no-repeat center; margin:0px auto 0 auto;}
+.soures22_banner{ width:950px; height:350px; background:url(../images/s22.jpg) no-repeat center; margin:0px auto 0 auto;}
+.soures23_banner{ width:100%; height:350px; background:url(../images/s23.jpg) no-repeat center; margin:0px auto 0 auto;}
+.soures24_banner{ width:100%; height:350px; background:url(../images/s24.jpg) no-repeat center; margin:0px auto 0 auto;}
+.soures25_banner{ width:950px; height:350px; background:url(../images/s25.jpg) no-repeat; margin:0px auto 0 auto;}
+.soures26_banner{width:950px; height:350px; background:url(../images/s26.png) no-repeat;  margin:0px auto 0 auto;}
+.soures27_banner{width:950px; height:350px; background:url(../images/s27.jpg) no-repeat;  margin:0px auto 0 auto;}
+.soures28_banner{width:950px; height:350px; background:url(../images/s28.jpg) no-repeat;  margin:0px auto 0 auto;}
+.tmalll_banner{ width:950px; height:350px; background:url(../images/tianmaol.jpg) no-repeat; margin:0px auto 0 auto;}
+
+.soures1_body{ width:980px; height:auto; border:10px solid #d5f98b;  background:#FFFFFF; margin:0 auto 30px auto; border-radius: 15px;}
+.soures2_body{ width:980px; height:auto; border:10px solid #febe7f;  background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+.soures3_body{ width:980px; height:auto; border:10px solid #b0d7fe;  background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+.soures4_body{ width:980px; height:auto; border:5px solid #cee8ff;  background:#FFFFFF; margin:30px auto 0 auto; border-radius: 15px;}
+.soures5_body{ width:980px; height:auto; border:1px solid #c9c9c9;  background:#FFFFFF;  border-radius: 15px;}
+.soures5_body1{ width:980px; height:auto;   background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+.soures6_body{ width:980px; height:auto; border:10px solid #e53333;  background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+.soures7_body{ width:980px; height:auto; border:10px solid #ffe1c5;  background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+.soures8_body{ width:980px; height:auto; border:10px solid #faa1a0;  background:#FFFFFF; margin:0 auto 30px auto; border-radius: 15px;}
+.soures9_body{ width:980px; height:auto; border:10px solid #79b5fa;  background:#FFFFFF; margin:0 auto 30px auto; border-radius: 15px;}
+.soures10_body{ width:980px; height:auto; border:10px solid #65676b; background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+.soures11_body{ width:980px; height:auto; border:10px solid #9bf3b9;  background:#FFFFFF; margin:0 auto 30px auto; border-radius: 15px;}
+.soures12_body{ width:980px; height:auto; border:10px solid #4d84cc;  background:#FFFFFF; margin:0 auto 30px auto; border-radius: 15px;}
+.soures13_body{ width:980px; height:auto; border:10px solid #dedede;  background:#FFFFFF; margin:0 auto 30px auto; border-radius: 15px;}
+.soures14_body{ width:980px; height:auto; border:10px solid #7fc1ff;  background:#FFFFFF; margin:0 auto 30px auto; border-radius: 15px;}
+.soures15_body{ width:980px; height:auto; border:10px solid #dedede;  background:#FFFFFF; margin:0 auto 30px auto; border-radius: 15px;}
+.soures16_body{ width:980px; height:auto; border:10px solid #e36883;  background:#FFFFFF; margin:0 auto 30px auto; border-radius: 15px;}
+.soures17_body{ width:980px; height:auto; border:10px solid #ffe1c5;  background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+.soures18_body{ width:980px; height:auto; border:10px solid #fcd068;  background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+.soures19_body{ width:980px; height:auto; border:10px solid #81a0c2;  background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+.soures20_body{ width:980px; height:auto; border:10px solid #59d4e0;  background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+.soures21_body{ width:980px; height:auto; border:10px solid #2a2a2b;  background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+.soures22_body{ width:980px; height:auto; border:1px solid #b8b8b8;  background:#fff; margin:0px auto 30px auto; border-radius: 15px;}
+.soures23_body{ width:980px; height:auto; border:10px solid #d4d1d1;  background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+.soures24_body{ width:980px; height:auto; border:10px solid #f99f9b;  background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+.soures25_body{ width:980px; height:auto; border:10px solid #2899ff;  background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px; }
+.soures26_body{ width:980px; height:auto; border:10px solid #ffc598;  background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+.soures27_body{ width:980px; height:auto; border:10px solid #50d8ff;  background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+.soures28_body{ width:980px; height:auto; border:10px solid #8ec2fd;  background:#FFFFFF; margin:0 auto 0 auto; border-radius: 15px;}
+
+.guandian_box{ width:980px; height:356px; background:url(../images/guandian.jpg) 20px -10px no-repeat; margin:0;}
+.guandian{ width:500px; height:auto; margin:0px 0px 25px 400px; line-height:180%;}
+.guandian h3{ font-size:16px; height:35px; line-height:35px; font-weight:normal;}
+.guandian p{ font-size:14px; color:#8e8e8e; display:block; list-style:none; margin:0;  padding:0; }
+
+.soures_type_box{ width:940px; height:380px;}
+.soures_box{ width:200px; height:300px; float:left; margin-left:25px; margin-top:10px;}
+.soures1{ width:155px; height:155px; margin:15px auto 0 auto; color:#FF0000; }
+.soures_title{ display:block; font-size:14px; list-style:none; background:url(../images/20131111banner_boot.jpg) repeat-x; width:150px; height:28px; text-align:center; line-height:28px; margin:10px auto 0 auto; border:1px solid #CCCCCC}
+.sy_title{ display:block; font-size:14px; list-style:none; background:url(../images/20131111banner_boot.jpg) repeat-x; width:150px; height:28px; text-align:center; line-height:28px; margin:10px auto 0 auto; border:1px solid #CCCCCC}
+.soures_txt{ width:150px; height:auto; margin:10px auto 0 auto}
+.soures_txt_hover{ width:150px; height:auto; margin:10px auto 0 auto; color:#FF0000}
+.sy_txt_hover{ width:150px; height:auto; margin:10px auto 0 auto; color:#ffffff;}
+.sy_txt_hover span{ display:block; list-style:none; width:150px; line-height:180%;}
+.soures_txt  span{ display:block; list-style:none; width:150px; line-height:180%;}
+.soures_txt_hover span{ display:block; list-style:none; width:150px; line-height:180%;}
+.soures_txt_info{display:block; list-style:none; margin:0 0 5px 0; }
+
+.soures2{ width:155px; height:155px; margin:15px auto 0 auto; background:url(../images/2.jpg)}
+.soures3{ width:155px; height:155px; margin:15px auto 0 auto; background:url(../images/3.jpg)}
+.soures4{ width:155px; height:155px; margin:15px auto 0 auto; background:url(../images/4.jpg)}
+
+/* 课程页面小导航 */
+.list{width:937px; margin:0 auto;}
+.list1{width:30%; font-size:26px; padding:2.5%; background: #0099ee; margin-top:30px; color: #fff; float:left; border-bottom:1px solid #0099ee;}
+.list2{width:59%; padding:2% 2.5%; color:#000; margin-top:30px; border-bottom:1px solid #0099ee; float: right;}
+.list1 img{margin-right:.5em; margin-left:.5em; width:1em;}
+.content_zi{padding:2.5%; padding-bottom:0; font-size:24px; line-height:150%; clear:both;}
+.content_tu{width:937px; margin:0 auto; padding-top:20px; font-size:22px; line-height:150%;}
+
+/* 课程页面增值服务 */
+.zengzhi{width:937px; margin:0 auto; display:table;}
+.zengzhi_left{width:184px; height:77px; padding:45px 0; float:left;}
+.zengzhi_in{display:table; padding:37px 33px 0 28px; float:left;}
+.zengzhi_in .title{width:469px; height:37px; line-height:37px; font-size:26px; color:#343434;}
+.zengzhi_in .introduce{width:469px; line-height:160%; font-size:16px; padding-top:5px; font-weight:500; color:#343434;}
+.znegzhi_right{width:223px; height:129px; padding-top:22px; float:left;}
+.zengzhi_bj{width:937px; height:10px; margin:0 auto; background:url(../images/gift_bj.jpg) no-repeat;}
+
+/* 课程页面学员毕业留念 */
+.fengcai2{ width:980px; height:auto; display:table; margin-left:22px;}
+.fengcai_ul2{display:table;}
+.fengcai_ul2 a{width:267px; height:179px; border:1px solid #dedede; float:left; margin:20px 20px 0 0; display:inline; padding:15px}
+.fengcai_ul2 a:hover{border:1px solid #a9a9a9;}
+.fengcai_img2{width:267px; height:179px; position:absolute;}
+.fengcai_img2 img{width:267px; height:179px;}
+.fengcai_img2 p{width:267px; height:27px; line-height:27px; text-align:center; color:#fff; font-size:16px; background:#000; position:absolute; left:0; bottom:0px; padding:0; margin:0; background:url(../images/slide-bg.png) 0 0;}
+
+/* 课程页面效果展示 */
+.xiaoguo{ width:980px; height:auto; display:table; margin-left:22px; margin-top:20px;}
+.xiaoguo_ul{display:table;}
+.xiaoguo_ul li a{width:281px; height:191px; float:left; border:3px solid #CCCCCC; margin-bottom:20px; border-radius:3px; display:inline;}
+.xiaoguo_ul a:hover{border:3px solid #0099ee;}
+.xiaoguo ul li{ float:left; margin-left:37px; margin-top:10px; text-align:center;}
+.xiaoguo_img{width:281px; height:191px; position:absolute;}
+.xiaoguo ul li p{width:281px; height:27px; line-height:27px; text-align:center; color:#fff; font-size:16px; background:#000; position:absolute; left:0; bottom:0; padding:0; margin:0; background:url(../images/slide-bg.png) 0 0;}
+
+
+.coures_title{ background:url(../images/soures_title_bg.jpg) repeat-x center; width:100%; height:43px; text-align:center; font-family:"微软雅黑"; font-size:24px; margin:20px auto; }
+.mtsy_coures_title{ background:url(../images/soures_title_bg.jpg) repeat-x center; color:#666;width:100%; height:43px; text-align:center; font-family:"微软雅黑"; font-size:24px; margin:20px auto; }
+
+.coures_title span{ background:#FFFFFF; line-height:43px; padding-left:10px;padding-right:10px;}
+.coures_table{ width:980px; height:auto; line-height:180%;}
+.coures_table td:hover{ background:#F6F6F6;color:#333}
+.coures_table a{ color:#0066CC}
+.coures_table td{ padding-bottom:5px; padding-top:5px;}
+
+.soures_teacher{ width:900px; height:auto; display:table; border-bottom:1px dashed #CCCCCC; margin:0 auto 20px auto; padding-bottom:10px;}
+.picture{ width:160px; height:160px; float:left;}
+.picture img{margin-left:15px;}
+.picture span{ width:160px; height:30px; line-height:30px; display:block; font-size:14px; list-style:none; text-align:center; color:#0099CC;}
+.coures_teacher_info{ width:700px; float:left; margin-left:30px !important; margin-left:20px; font-size:14px; height:auto; line-height:180%; color:#8e8e8e; padding-top:15px;}
+.coures_teacher_info font{ color:#FF3300}
+.coures_qubie{ width:826px; height:258px; margin:0 auto 0 auto;}
+.coures_zhiye{ width:826px; height:338px; margin:0 auto 0 auto;}
+
+.huaxu{ width:980px; height:auto; display:table; margin-left:22px; margin-top:20px;}
+.huaxu ul li{ float:left; margin-left:28px; margin-top:10px; text-align:center;}
+.huaxu ul li img{ border:2px solid #CCCCCC; margin-bottom:10px; border-radius: 3px;}
+.huaxu ul li img:hover{ border:2px solid #0099ee;}
+.new_map{ float:left; }
+.tabs_box{}
+/* title */
+.tabs .tabs-title {
+}
+.tabs .tabs-title .tabs-lbg, .tabs .tabs-title .tabs-rbg{
+	background-image: url(../images/tab-list-lrbg.jpg);
+	height: 37px;
+	width: 4px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	float: left;	
+}
+.tabs .tabs-title .tabs-rbg{
+	background-position: -4px 0px;
+}
+.tabs .tabs-title .tabs-list{
+	background-repeat: repeat-x;
+	height: 37px;
+	float: left;
+}
+.tabs .tabs-title .tabs-list .tabs-option {
+	float: left;
+	height: 31px;
+	font-size: 12px;
+	line-height: 30px;
+	cursor:pointer;
+}
+.tabs .tabs-title .tabs-list .tabs-option .tabs-option-lbg, .tabs .tabs-title .tabs-list .tabs-option .tabs-option-rbg {	
+	height: 31px;
+	width: 5px;
+	display: block;
+	float: left;
+}
+.tabs .tabs-title .tabs-list .tabs-option .tabs-option-text{
+	float: left;
+	height: 31px;
+	line-height: 31px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+/* selected */
+.tabs .tabs-title .tabs-list .selected .tabs-option-lbg, .tabs .tabs-title .tabs-list .selected .tabs-option-rbg {
+	background-image: url(../images/tab-list-selected.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+.tabs .tabs-title .tabs-list .selected .tabs-option-rbg {
+	background-position: -6px 0px;
+}
+.tabs .tabs-title .tabs-list .selected .tabs-option-text{
+	background-color: #dcdcdc;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #004f94;
+	color:#000000;
+	height: 30px;
+	line-height: 30px;
+}
+/* box */
+.tabs .tabs-box {
+	width:980px;
+	overflow: hidden;
+}
+.tabs .tabs-box .tabs-content {
+	margin-left:23px;
+}
+.tabs .tabs-box .tabs-content ul li{ float:left; margin-right:28px; margin-top:20px; border:1px solid #CCC; padding:5px;}
+.qicai{ display:block; list-style:none;}
+.qicai li{ float:left; margin-left:28px;}
+.qicai li img{ border:1px solid #dadada}
+.qicai li span{ display:block; list-style:none; text-align:center; line-height:30px;}
+.gj_demo{ width:950px;}
+
+.gg_weixin{width:670px; display:table; margin-bottom:20px;}
+
+.kc_tuijian{ width:475px; height:100px; border:1px dashed #ff0000; margin:10px 0 10px 0; padding:5px 5px 5px 187px; background:url(../images/ke_tuijian.jpg) no-repeat 10px 2px }
+.map_clr{ width:1px; height:320px; border-right:1px dashed #CCCCCC; float:left; margin:0 20px 0 20px;}
+
+.nav_up{
+	padding:7px;
+	background-color:white;
+	border:1px solid #CCC;
+	position:fixed;
+	background:#FFF url(../images/arrow_up.png) no-repeat top left;
+	background-position:50% 50%;
+	width:20px;
+	height:20px;
+	bottom:60px;
+	left:50%;
+	margin-left:510px;
+	white-space:nowrap;
+	cursor: pointer;
+	-moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-top-left-radius:3px;
+	-webkit-border-top-right-radius:3px;
+    -khtml-border-top-left-radius:3px;
+	-khtml-border-top-right-radius:3px;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+}
+.nav_down{
+	padding:7px;
+	background-color:white;
+	border:1px solid #CCC;
+	position:fixed;
+	background:#FFF url(../images/arrow_down.png) no-repeat top left ;
+	background-position:50% 50%;
+	width:20px;
+	height:20px;
+	bottom:20px;
+	left:50%;
+	margin-left:510px;
+	white-space:nowrap;
+	cursor: pointer;
+	-moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-bottom-left-radius:3px;
+	-webkit-border-bottom-right-radius:3px;
+    -khtml-border-bottom-left-radius:3px;
+	-khtml-border-bottom-right-radius:3px;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+}
+
+.environment_box{ width:1002px; height:auto; display:table; padding-left:6px; padding-bottom:15px; margin:20px auto 0 auto; background:#FFF;border-radius:5px; clear:both; border: 1px solid #CCCCCC;}
+.environment_box h3{ display:block; list-style:none; width:100%; height:40px; line-height:50px; font-size:16px; font-family:"微软雅黑"; text-indent:8px; color:#333;}
+.environment_box ul,li{ display:block; list-style:none; margin:0; padding:0;}
+.environment_box li{ float:left; width:180px; padding:5px; border:1px solid #dedede; margin:10px 0px 0px 6px; overflow:hidden; display:inline;}
+.environment_box p{ display:block; list-style:none; margin:0; padding:0; height:25px; line-height:25px; text-align:center;}
+
+
+/* 课程列表开始 */
+.coures_tyle{ width:937px; margin:0px auto;}
+.coures_tyle .ulh{ width:937px; display:table; clear:both;}
+.coures_tyle .ulp{ width:937px; display:table; clear:both;}
+.coures_tyle .f7f7{background:#f7f7f7;}
+.coures_tyle .ffff{background:#FFF;}
+
+.coures_tyle .ulh .coures_sub_h{width:131px; height:314px; line-height:314px; display:block; list-style:none; border-top:1px dashed #bcbcbc; border-left:1px dashed #bcbcbc;  float:left;}
+.coures_tyle .ulh .coures_sub_h2{width:131px; height:157px; line-height:157px; display:block; list-style:none; border-top:1px dashed #bcbcbc; border-left:1px dashed #bcbcbc;  float:left;}
+.coures_tyle .ulh .coures_sub_h h3,.coures_sub_h2 h3{font-family: jdpingheijian,STHeiti, Helvetica, Arial, Verdana, sans-serif; font-size:18px; display:block; list-style:none;width:100%; text-align:center; }
+
+.coures_tyle .ulh .coures_sub{width:200px; height:157px; display:block; list-style:none; border-top:1px dashed #bcbcbc; border-left:1px dashed #bcbcbc;  float:left; color:#999}
+.coures_tyle .ulh .coures_sub span{width:90px; height:58px; display:block; margin:11px auto; overflow:hidden;}
+.coures_tyle .ulh .coures_sub h3{font-family: jdpingheijian,STHeiti, Helvetica, Arial, Verdana, sans-serif; font-size:22px; display:block; list-style:none;width:100%; text-align:center; padding:0; line-height:30px; height:30px; font-weight:normal;}
+.coures_tyle .ulh .coures_sub p{font-size:12px; display:block; font-family:tahoma,Arial; list-style:none; width:100%; text-align:center;  margin:0; padding:0;}
+.coures_tyle .ulh .coures_sub:hover{background:#D6EDFF; text-decoration:none; color:#333}
+.coures_tyle .ulh .hover{background:#D6EDFF; color:#333;}
+
+.coures_tyle .ulh .dt,.coures_tyle .ulp .dt{float:left; width:132px; display:table;}
+.coures_tyle .ulh .dd,.coures_tyle .ulp .dd{float:right; width:805px; display:table;}
+
+.coures_tyle .b_right{border-right:1px dashed #bcbcbc;}
+.coures_tyle .b_bottom{border-bottom:1px dashed #bcbcbc; margin-bottom:5px;}
+.coures_tyle .ulh .cico{background:url(../images/ico.png);}
+
+/* 淘宝开店创业班-展开 */
+.coures_tyle .ulh .cico1{background-position:0 -2px;}
+.coures_tyle .ulh a:hover .cico1,.coures_tyle .ulh .cico1_h{background-position:-90px -2px;}
+
+/* 淘宝美工店长班-展开 */
+.coures_tyle .ulh .cico2{background-position:0 -62px;}
+.coures_tyle .ulh a:hover .cico2,.coures_tyle .ulh .cico2_h{background-position:-90px -62px;}
+
+/* 淘宝推广运营班-展开 */
+.coures_tyle .ulh .cico3{background-position:0 -122px;}
+.coures_tyle .ulh a:hover .cico3,.coures_tyle .ulh .cico3_h{background-position:-90px -122px;}
+
+/* 淘宝高级美工班-展开 */
+.coures_tyle .ulh .cico4{background-position:0 -182px;}
+.coures_tyle .ulh a:hover .cico4,.coures_tyle .ulh .cico4_h{background-position:-90px -182px;}
+
+
+.coures_tyle .ulh .cicotm{ background:#f7f7f7 url(../images/ico_4.png) no-repeat center 15px; border-right:1px dashed #bcbcbc;}
+.coures_tyle .ulh .cicotm:hover{background:#D6EDFF url(../images/ico_4h.png) no-repeat center 15px; border-right:1px dashed #bcbcbc;}
+
+
+/* 无线淘宝运营班-展开 */
+.coures_tyle .ulh .cico5{background-position:0 -244px;}
+.coures_tyle .ulh a:hover .cico5,.coures_tyle .ulh .cico5_h{background-position:-90px -244px;}
+
+/* 天猫运营总裁班-展开 */
+.coures_tyle .ulh .cico6{background-position:0 -302px;}
+.coures_tyle .ulh a:hover .cico6,.coures_tyle .ulh .cico6_h{background-position:-90px -302px;}
+
+/* 阿里巴巴总裁班-展开 */
+.coures_tyle .ulh .cico7{background-position:0 -360px;}
+.coures_tyle .ulh a:hover .cico7,.coures_tyle .ulh .cico7_h{background-position:-90px -360px;}
+
+/* 高级店长培训班-展开 */
+.coures_tyle .ulh .cico8{background-position:0 -420px;}
+.coures_tyle .ulh a:hover .cico8,.coures_tyle .ulh .cico8_h{background-position:-90px -420px;}
+
+/* 第二排 *
+/* 微信开店创业班-展开 */
+.coures_tyle .ulh .cico9{background-position:0 -479px;}
+.coures_tyle .ulh a:hover .cico9,.coures_tyle .ulh .cico9_h{background-position:-90px -479px;}
+
+/* 微信营销总裁班-展开 */
+.coures_tyle .ulh .cico10{background-position:0 -532px;}
+.coures_tyle .ulh a:hover .cico10,.coures_tyle .ulh .cico10_h{background-position:-90px -532px;}
+
+/* 微信营销文案班-展开 */
+.coures_tyle .ulh .cico11{background-position:0 -589px;}
+.coures_tyle .ulh a:hover .cico11,.coures_tyle .ulh .cico11_h{background-position:-90px -589px;}
+
+/* 微商营销管理班-展开 */
+.coures_tyle .ulh .cico12{background-position:0 -646px;}
+.coures_tyle .ulh a:hover .cico12,.coures_tyle .ulh .cico12_h{background-position:-90px -646px;}
+
+/* 第三排 */
+/* 京东开店创业班-展开 */
+.coures_tyle .ulh .cico13{background-position:0 -701px;}
+.coures_tyle .ulh a:hover .cico13,.coures_tyle .ulh .cico13_h{background-position:-90px -701px;}
+
+/* 京东美工店长班-展开 */
+.coures_tyle .ulh .cico14{background-position:0 -760px;}
+.coures_tyle .ulh a:hover .cico14,.coures_tyle .ulh .cico14_h{background-position:-90px -760px;}
+
+/* 京东运营推广班-展开 */
+.coures_tyle .ulh .cico15{background-position:0 -816px;}
+.coures_tyle .ulh a:hover .cico15,.coures_tyle .ulh .cico15_h{background-position:-90px -816px;}
+
+/* 京东快车高级班-展开 */
+.coures_tyle .ulh .cico16{background-position:0 -875px;}
+.coures_tyle .ulh a:hover .cico16,.coures_tyle .ulh .cico16_h{background-position:-90px -875px;}
+
+/* 第四排 */
+/* 速卖通总裁班-展开 */
+.coures_tyle .ulh .cico17{background-position:0 -935px;}
+.coures_tyle .ulh a:hover .cico17,.coures_tyle .ulh .cico17_h{background-position:-90px -935px;}
+
+/* 亚马逊总裁班-展开 */
+.coures_tyle .ulh .cico18{background-position:0 -993px;}
+.coures_tyle .ulh a:hover .cico18,.coures_tyle .ulh .cico18_h{background-position:-90px -993px;}
+
+/* eBay总裁班-展开 */
+.coures_tyle .ulh .cico19{background-position:0 -1048px;}
+.coures_tyle .ulh a:hover .cico19,.coures_tyle .ulh .cico19_h{background-position:-90px -1048px;}
+
+/* wish敦煌总裁班-展开 */
+.coures_tyle .ulh .cico20{background-position:0 -1103px;}
+.coures_tyle .ulh a:hover .cico20,.coures_tyle .ulh .cico20_h{background-position:-90px -1103px;}
+
+/* 第五排 */
+/* 淘宝静物摄影班-展开 */
+.coures_tyle .ulh .cico21{background-position:0 -1165px;}
+.coures_tyle .ulh a:hover .cico21,.coures_tyle .ulh .cico21_h{background-position:-90px -1165px;}
+
+/* 淘宝模特摄影班-展开 */
+.coures_tyle .ulh .cico22{background-position:0 -1225px;}
+.coures_tyle .ulh a:hover .cico22,.coures_tyle .ulh .cico22_h{background-position:-90px -1225px;}
+
+/* 高级产品修图班-展开 */
+.coures_tyle .ulh .cico23{background-position:0 -1342px;}
+.coures_tyle .ulh a:hover .cico23,.coures_tyle .ulh .cico23_h{background-position:-90px -1342px;}
+
+/* 高端摄影培训班-展开 */
+.coures_tyle .ulh .cico24{background-position:0 -1286px;}
+.coures_tyle .ulh a:hover .cico24,.coures_tyle .ulh .cico24_h{background-position:-90px -1286px;}
+
+/* 第六排 */
+/* 金牌客服就业班-展开 */
+.coures_tyle .ulh .cico25{background-position:0 -1403px;}
+.coures_tyle .ulh a:hover .cico25,.coures_tyle .ulh .cico25_h{background-position:-90px -1403px;}
+
+/* 高级美工就业班-展开 */
+.coures_tyle .ulh .cico26{background-position:0 -1464px;}
+.coures_tyle .ulh a:hover .cico26,.coures_tyle .ulh .cico26_h{background-position:-90px -1464px;}
+
+/* 运营推广就业班-展开 */
+.coures_tyle .ulh .cico27{background-position:0 -1518px;}
+.coures_tyle .ulh a:hover .cico27,.coures_tyle .ulh .cico27_h{background-position:-90px -1518px;}
+
+/* 微信运营就业班-展开 */
+.coures_tyle .ulh .cico28{background-position:0 -1578px;}
+.coures_tyle .ulh a:hover .cico28,.coures_tyle .ulh .cico28_h{background-position:-90px -1578px;}
+
+.coures_tyle .ulh .cicoe{  color:#ff7a0c;}
+.coures_tyle .ulh .cicoe:hover{ color:#ff7a0c; text-decoration:none;}
+
+
+.coures_tyle .ulp .coures_sub{ width:200px; height:71px;display:block; list-style:none; border-top:1px dashed #bcbcbc; border-left:1px dashed #bcbcbc;  float:left; color:#999}
+.coures_tyle .ulp .coures_sub h3{ font-family: jdpingheijian,STHeiti, Helvetica, Arial, Verdana, sans-serif; font-size:19px; display:block; list-style:none;width:145px; padding:0; line-height:71px; height:71px; font-weight:normal; float:right;}
+.coures_tyle .ulp .coures_sub span{width:38px; height:40px; margin:15px 7px 16px 10px; display:block; overflow:hidden; float:left;}
+.coures_tyle .ulp .cico1_h:link,.cico2_h:link,.cico3_h:link,.cico4_h:link,.cico5_h:link,.cico6_h:link,.cico7_h:link,.cico7_h:link,.cico8_h:link{color:#000}
+.coures_tyle .ulp .cico1_h:visited,.cico2_h:visited,.cico3_h:visited,.cico4_h:visited,.cico5_h:visited,.cico6_h:visited,.cico7_h:visited,.cico7_h:visited,.cico8_h:visited{color:#000}
+
+.coures_tyle .ulp .coures_sub:hover{background:#D6EDFF; text-decoration:none; color:#333}
+
+.coures_tyle .ulp .coures_sub_h{width:131px; height:71px; line-height:71px; display:block; list-style:none; border-top:1px dashed #bcbcbc; border-left:1px dashed #bcbcbc;  float:left;}
+.coures_tyle .ulp .coures_sub_h h3{ font-family: jdpingheijian,STHeiti, Helvetica, Arial, Verdana, sans-serif; font-size:18px; display:block; list-style:none;width:100%; text-align:center; }
+
+.coures_tyle .ulp .cico{background:url(../images/ico_i.png);}
+/* 淘宝开店创业班-收缩 */
+.coures_tyle .ulp .cico1{background-position:0 0;}
+.coures_tyle .ulp a:hover .cico1,.coures_tyle .ulp .cico1_h{background-position:-38px 0;}
+
+/* 淘宝美工店长班-收缩 */
+.coures_tyle .ulp .cico2{background-position:0 -38px;}
+.coures_tyle .ulp a:hover .cico2,.coures_tyle .ulp .cico2_h{background-position:-38px -38px;}
+
+/* 淘宝推广运营班-收缩 */
+.coures_tyle .ulp .cico3{background-position:0 -74px;}
+.coures_tyle .ulp a:hover .cico3,.coures_tyle .ulp .cico3_h{background-position:-38px -74px;}
+
+/* 淘宝高级美工班-收缩 */
+.coures_tyle .ulp .cico4{background-position:0 -111px;}
+.coures_tyle .ulp a:hover .cico4,.coures_tyle .ulp .cico4_h{background-position:-38px -111px;}
+
+/* 无线淘宝运营班-收缩 */
+.coures_tyle .ulp .cico5{background-position:0 -145px;}
+.coures_tyle .ulp a:hover .cico5,.coures_tyle .ulp .cico5_h{background-position:-38px -145px;}
+
+/* 天猫运营总裁班-收缩 */
+.coures_tyle .ulp .cico6{background-position:0 -182px;}
+.coures_tyle .ulp a:hover .cico6,.coures_tyle .ulp .cico6_h{background-position:-38px -182px;}
+
+/* 阿里巴巴总裁班-收缩 */
+.coures_tyle .ulp .cico7{background-position:0 -217px;}
+.coures_tyle .ulp a:hover .cico7,.coures_tyle .ulp .cico7_h{background-position:-38px -217px;}
+
+/* 高级店长培训班-收缩 */
+.coures_tyle .ulp .cico8{background-position:0 -254px;}
+.coures_tyle .ulp a:hover .cico8,.coures_tyle .ulp .cico8_h{background-position:-38px -254px;}
+
+/* 第二排 */
+/* 微信开店创业班-收缩 */
+.coures_tyle .ulp .cico9{background-position:0 -291px;}
+.coures_tyle .ulp a:hover .cico9,.coures_tyle .ulp .cico9_h{background-position:-38px -291px;}
+
+/* 微信营销总裁班-收缩 */
+.coures_tyle .ulp .cico10{background-position:0 -328px;}
+.coures_tyle .ulp a:hover .cico10,.coures_tyle .ulp .cico10_h{background-position:-38px -328px;}
+
+/* 微信营销文案班-收缩 */
+.coures_tyle .ulp .cico11{background-position:0 -365px;}
+.coures_tyle .ulp a:hover .cico11,.coures_tyle .ulp .cico11_h{background-position:-38px -365px;}
+
+/* 微信营销文案班-收缩 */
+.coures_tyle .ulp .cico12{background-position:0 -402px;}
+.coures_tyle .ulp a:hover .cico12,.coures_tyle .ulp .cico12_h{background-position:-38px -402px;}
+
+/* 第三排 */
+/* 京东开店创业班-收缩 */
+.coures_tyle .ulp .cico13{background-position:0 -438px;}
+.coures_tyle .ulp a:hover .cico13,.coures_tyle .ulp .cico13_h{background-position:-38px -438px;}
+
+/* 京东美工店长班-收缩 */
+.coures_tyle .ulp .cico14{background-position:0 -478px;}
+.coures_tyle .ulp a:hover .cico14,.coures_tyle .ulp .cico14_h{background-position:-38px -478px;}
+
+/* 京东运营推广班-收缩 */
+.coures_tyle .ulp .cico15{background-position:0 -516px;}
+.coures_tyle .ulp a:hover .cico15,.coures_tyle .ulp .cico15_h{background-position:-38px -516px;}
+
+/* 京东快车高级班-收缩 */
+.coures_tyle .ulp .cico16{background-position:0 -551px;}
+.coures_tyle .ulp a:hover .cico16,.coures_tyle .ulp .cico16_h{background-position:-38px -551px;}
+
+/* 第四排 */
+/* 速卖通总裁班-收缩 */
+.coures_tyle .ulp .cico17{background-position:0 -585px;}
+.coures_tyle .ulp a:hover .cico17,.coures_tyle .ulp .cico17_h{background-position:-38px -585px;}
+
+/* 亚马逊总裁班-收缩 */
+.coures_tyle .ulp .cico18{background-position:0 -621px;}
+.coures_tyle .ulp a:hover .cico18,.coures_tyle .ulp .cico18_h{background-position:-38px -621px;}
+
+/* wish总裁班-收缩 */
+.coures_tyle .ulp .cico19{background-position:0 -659px;}
+.coures_tyle .ulp a:hover .cico19,.coures_tyle .ulp .cico19_h{background-position:-38px -659px;}
+
+/* 敦煌总裁班-收缩 */
+.coures_tyle .ulp .cico20{background-position:0 -690px;}
+.coures_tyle .ulp a:hover .cico20,.coures_tyle .ulp .cico20_h{background-position:-38px -690px;}
+
+/* 第五排 */
+/* 淘宝静物摄影班-收缩 */
+.coures_tyle .ulp .cico21{background-position:0 -725px;}
+.coures_tyle .ulp a:hover .cico21,.coures_tyle .ulp .cico21_h{background-position:-38px -725px;}
+
+/* 淘宝模特摄影班-收缩 */
+.coures_tyle .ulp .cico22{background-position:0 -767px;}
+.coures_tyle .ulp a:hover .cico22,.coures_tyle .ulp .cico22_h{background-position:-38px -767px;}
+
+/* 高级产品修图班-收缩 */
+.coures_tyle .ulp .cico23{background-position:0 -846px;}
+.coures_tyle .ulp a:hover .cico23,.coures_tyle .ulp .cico23_h{background-position:-38px -846px;}
+
+/* 高端摄影培训班-收缩 */
+.coures_tyle .ulp .cico24{background-position:0 -810px;}
+.coures_tyle .ulp a:hover .cico24,.coures_tyle .ulp .cico24_h{background-position:-38px -810px;}
+
+/* 第六排 */
+/* 金牌客服就业班-收缩 */
+.coures_tyle .ulp .cico25{background-position:0 -885px;}
+.coures_tyle .ulp a:hover .cico25,.coures_tyle .ulp .cico25_h{background-position:-38px -885px;}
+
+/* 高级美工就业班-收缩 */
+.coures_tyle .ulp .cico26{background-position:0 -923px;}
+.coures_tyle .ulp a:hover .cico26,.coures_tyle .ulp .cico26_h{background-position:-38px -923px;}
+
+/* 运营推广就业班-收缩 */
+.coures_tyle .ulp .cico27{background-position:0 -959px;}
+.coures_tyle .ulp a:hover .cico27,.coures_tyle .ulp .cico27_h{background-position:-38px -959px;}
+
+/* 微信运营就业班-收缩 */
+.coures_tyle .ulp .cico28{background-position:0 -995px;}
+.coures_tyle .ulp a:hover .cico28,.coures_tyle .ulp .cico28_h{background-position:-38px -995px;}
+
+.coures_tyle .ulp .cicoe{  color:#ff7a0c; }
+.coures_tyle .ulp .cicoe:hover{ color:#ff7a0c; text-decoration:none; }
+
+
+
+.coures_Tips{ width:937px; height:50px; line-height:50px; margin:0 auto; background:#e4f3ff url(../images/ico_99.png) no-repeat 10px 10px; text-indent:50px; font-family:"微软雅黑"; font-size:14px; position:relative}
+.coures_Tips span{ display:block; list-style:none; width:300px; height:35px; position:absolute; right:0px; top:8px;}
+.coures_Tips span a{ display:block; list-style:none; float:left; width:109px; height:35px; margin-left:10px;}
+
+.head-v3{position:relative;z-index:100;min-width:1024px}
+.head-v3 .navigation-inner{margin:0 auto;width:1008px;position:relative}
+.navigation-up{height:50px;background:#004f94; }
+.navigation-up .navigation-v3{float:left;_margin-left:10px}
+.navigation-up .navigation-v3 ul{float:left}
+.navigation-up .navigation-v3 li{float:left;font:normal 16px/49px "microsoft yahei";color:#000}
+.navigation-up .navigation-v3 .nav-up-selected,.navigation-up .navigation-v3 .nav-up-selected a{background:#efefef; color:#356ded; text-decoration:none;}
+.navigation-up .navigation-v3 .nav-up-selected-inpage{background:#efefef; text-decoration:none;}
+.navigation-up .navigation-v3 li {font-weight:normal;padding:0;margin:0}
+.navigation-up .navigation-v3 li a{padding:0 24px;color:#fff;display:inline-block;height:50px;font-family:"microsoft yahei";text-decoration:none}
+
+.navigation-down{position:absolute;top:50px;left:0px;width:100%;}
+.navigation-down .nav-down-menu{width:100%;margin:0;background:#efefef; position:absolute;top:0px; }
+.navigation-down .nav-down-menu .navigation-down-inner{margin:auto;width:1200px;position:relative}
+.navigation-down .nav-down-menu dl{float:left;margin:18px 80px 18px 0}
+.navigation-down .menu-1 dl{margin:20px 80px 25px 0}
+.navigation-down .menu-1 dt{font:normal 16px "microsoft yahei";color:#356ded;padding-bottom:10px;border-bottom:1px solid #c7c7c7;margin-bottom:10px; text-align:center;}
+.navigation-down .menu-1 dd a{color:#252525;font:normal 14px/30px "microsoft yahei"}
+.navigation-down .menu-1 dd a:hover{color:#F00}
+.navigation-down .menu-2 dd a{color:#000;font:normal 16px "microsoft yahei"}
+
+
+.teacher_b{ width:350px; height:200px; margin-top:20px; margin-left:30px; float:left;  font:normal 16px/49px "microsoft yahei"; }
+.shizhan_b{ width:300px; height:150px; margin-left:30px; font:normal 18px/49px "microsoft yahei"; float:left;}
+.teacher_b h3,.shizhan_b h3{ color:#2469db;  font:normal 18px/15px "microsoft yahei"; font-weight:bold; margin-top:20px; }
+.teacher_b p,.shizhan_b p{  font:normal 14px/25px "microsoft yahei";}
+.shizhan_img{ border:5px solid #FFF; float:left; border-radius:5px;}
+.teacher_img{ border:5px solid #FFF; float:left; border-radius:5px; margin-top:20px; margin-left:100px;}
+.about_img{ border:5px solid #FFF; float:left; border-radius:5px; margin-top:20px;}
+.c_qq{ margin-top:5px; height:25px;}
+.c_qq li{ float:left; margin-right:10px;}
+.lx_b{ width:100px; float:left;font:normal 16px/15px "microsoft yahei"; margin-top:30px;}
+.lx_b a{ color:#252525}
+.lx_b a:hover{ color:#F00}
+
+.footer{ width:100%; height:470px;background:#FFF url(../images/footer_bg.jpg) no-repeat center; margin-top:25px;}
+.footer_c{ width:1000px; height:370px; margin:0 auto 0 auto;}
+.erweima{}
+.footer_l{ width:680px; height:350px; float:left; margin-top:20px;}
+.footer_l li{ float:left; display:block; list-style:none; width:150px;}
+.footer_l li dd{ display:block; list-style:none; height:35px; line-height:35px; font-size:20px; color:#004f94}
+.footer_l li dl{ display:block; list-style:none; height:30px; line-height:30px; font-size:14px;  }
+.footer_r{ width:320px; height:350px; float:left; margin-top:20px; text-align:left; }
+.footer_r h3{ display:block; list-style:none;  text-align:left; color:#000; margin-top:5px;}
+.footer_r p{ line-height:25px; display:block; list-style:none; }
+.copyright{ width:1000px; height:25px; line-height:25px;  clear:both; margin-top:0; margin-bottom:50px;}
+
+
+
+/*-------- 顶部开始 --------------*/
+#topbar{width:100%; height:34px; background:#f6f6f6; border-bottom:1px #e2e2e2 solid;}
+.x-container{width:1000px; height:34px; margin:0 auto;}
+.x-left{float:left; line-height:34px;}
+.x-right{float:right; line-height:34px;}
+/*-------- 顶部结束 --------------*/

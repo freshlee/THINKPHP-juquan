@@ -1,0 +1,59 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/Admin.css">
+<title>添加商品</title>
+</head>
+<body>
+
+<div class='menu'>&nbsp;编辑 &gt; 编辑系列</div>
+
+<div class="content">
+  	<Form name='EditForm' id='EditForm' method='post' action='__URL__/doedit' onSubmit="return ck_Project(this);" enctype="multipart/form-data" >
+
+  <table width="98%" border="0" cellspacing="1" cellpAdding="1" align="center" class="table">
+    
+	  
+	
+      <tr>
+        <th align="center"><font color="#FF0000">*</font>系列名称（中文）</td>
+        <td><input name="name" type="text" value="{<$newsList_info.name>}" size="30" id="co_name">
+		<input type="hidden" name="id" value="{<$newsList_info.id>}"></td>
+      </tr>
+	  
+	   <tr>
+        <th align="center"><font color="#FF0000">*</font>系列名称（英文）</td>
+        <td><input name="ename" type="text" value="{<$newsList_info.ename>}" size="30" id="ename">
+		</td>
+      </tr>
+	  
+	   <tr>
+		 <th align="center"><font color="#FF0000">*</font>上传图片</td>
+         <td>
+           <input type="file" name="pic" size="35" />
+		   <neq name="newsList_info.img" value="">
+                         <img height="80" src="/Uploads/series/{<$newsList_info.img>}" />
+			</neq>                                               
+         </td>
+      </tr> 
+	  
+	   <tr>
+        <th align="center"><font color="#FF0000">*</font>排序</td>
+        <td><input name="sort" type="text" value="{<$newsList_info.sort>}" size="30" id="co_sort"></td>
+      </tr>
+  
+	  
+      <tr bgcolor="#FFFFFF">
+        <td>&nbsp;</td>
+        <td align="left">
+		<input type="submit" name="Submit" value="保 存" class="button" > &nbsp;&nbsp;       
+		 <input type="button" value="返 回" class="button" onClick="javascript:history.back(-1);" />
+        </td>
+      </tr>
+  </table>
+      </Form>
+
+  <br>
+</div>
+<br>
+</body>
+</html>

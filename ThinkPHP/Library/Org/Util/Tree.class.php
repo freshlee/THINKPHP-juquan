@@ -1,0 +1,1 @@
+<?phpnamespace Org\Util;class Tree{	static public $treeNode=array();	public function create($data,$pid=0){		$model = D(CONTROLLER_NAME);		//$model->getPk();		$id_str=$model->getPk();		foreach($data as $k=>$v){			if($v['pid']==$pid){				self::$treeNode[]=$v;				unset($data[$k]);				self::create($data,$v[$id_str]);			}		}		return Tree::$treeNode;	}}

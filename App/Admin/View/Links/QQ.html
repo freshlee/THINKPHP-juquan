@@ -1,0 +1,95 @@
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/Admin.css">
+<link href="__PUBLIC__/Admin/css/page.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/Admin/js/jquery-1.7.js" language="JavaScript" type="text/javascript" ></script>
+<script type="text/javascript"> jQuery=$;  </script>  <!--因为jQuery与ThinkAjax的$符号冲突--> 
+
+<script type="text/javascript" src="__PUBLIC__/Admin/js/admin.js"></script>
+
+<script language="javascript" type="text/javascript">
+var oldColor="#ffffff";//原来的颜色
+function trOver(trObj){
+oldColor=trObj.style.backgroundColor;
+trObj.style.backgroundColor="#ffffcc";
+}
+function trOut(trObj){
+trObj.style.backgroundColor=oldColor;
+}
+</script>
+
+<script type="text/javascript">   
+ 
+		
+//------------删除按钮函数------------------------------------	
+function delAllNews(){	 
+	if(confirm('确定要删除吗？')){
+  var arr = new Array();
+  var checkbox = document.getElementsByName("CheckBoxID");
+  for(var i = 0 ; i <checkbox.length ; i++ ){
+  if(checkbox[i].checked == true){
+  arr[i] = checkbox[i].value;
+  }
+  }
+  if(arr=="")  { alert("请选择删除项");  return false; }
+//alert(arr);
+
+ jQuery.ajax({  
+       type: "POST",  
+       url: "__URL__/DelAllFlink",  
+	   data: "arr="+arr,  
+       dataType: 'json',  
+      success: function(obj){             
+			 
+			 alert("删除成功");  
+			window.navigate("__URL__/Flink");             
+       }   
+    }) 		
+	}else{
+	
+	
+	
+		}
+	} 
+ 
+ //----------------------------结束---------------------------
+ </script>
+ 
+<title>qq</title>
+</head>
+<body>
+
+<div class='menu'>&nbsp;查看 &gt; QQ</div>
+ <form action="" method='get' name='EditForm' id="EditForm" >    
+   
+<div class="content" align="center">
+<table width="100%" border="0" cellspacing="0" cellpAdding="0" bgcolor="#d4d0c8">
+<tr bgcolor="#FFFFFF" align="center">
+<td width='5%' class='title'>编号</td>
+<td width='20%' class='title'>联系人</td>
+<td class='title'width='20%'>QQ号码</td>
+<td width='20%' class='title'>联系电话</td>
+<td width='10%' class='title'>排序</td>
+<td width='25%'  class='title'>操作</td>　
+</tr>
+ <volist id="newsList_info" name="memberlist">
+<tr onMouseOver='trOver(this);' onMouseOut='trOut(this);' bgcolor='#ffffff' align="center">
+ <td align='center'>{<$key + 1 >}</td>
+ <td align='center'>{<$newsList_info.QQContact>}</td>
+  <td>{<$newsList_info.QQNumber>}</td>
+   <td>{<$newsList_info.QQPhone>}</td> 
+   <td>{<$newsList_info.QQOrder>}</td> 
+  <td align='center'><a href='__URL__/QQEdit/ID/{<$newsList_info.ID>}'>修改</a> | <a href='__URL__/DelQQ/ID/{<$newsList_info.ID>}' onClick="return confirm('确定要删除吗？')">删除</a> | <input name='CheckBoxID' id="CheckBoxID"  onClick="" type='checkbox' value='{<$newsList_info.ID>}'></td>
+   
+  </tr>
+ </volist> 
+  </table>
+</div><div class="ttbom">
+<input name="按钮" type='button' class="button" onClick="delAllNews()" value='删除所选'> &nbsp; <input type='checkbox' name='chkall' onClick='CheckAll(this.form)' value='ON'>全选</div>
+<div class="{<$pagestyle>}">{<$page>}</div>
+</form>
+  <br>
+</body>
+</html>
+                                                                                       

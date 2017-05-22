@@ -1,0 +1,227 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/Admin.css">
+
+<script src="__PUBLIC__/Home/js/Base.js" language="JavaScript" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/js/prototype.js" language="JavaScript" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/js/mootools.js" language="JavaScript" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/js/ThinkAjax.js" language="JavaScript" type="text/javascript" ></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/ckmain.js" charset="gb2312"></script>
+<title>添加资质</title>
+
+<script type="text/javascript" src="__PUBLIC__/Homet/js/utils.js"></script>
+<script type="text/javascript">
+ function addImg(obj)
+  {
+      var src  = obj.parentNode.parentNode;
+      var idx  = rowindex(src);
+      var tbl  = document.getElementById('gallery-table');
+      var row  = tbl.insertRow(idx + 1);
+      var cell = row.insertCell(-1);
+      cell.innerHTML = src.cells[0].innerHTML.replace(/(.*)(addImg)(.*)(\[)(\+)/i, "$1removeImg$3$4-");
+  }
+
+  /**
+   * 鍒犻櫎鍥剧墖涓婁紶
+   */
+  function removeImg(obj)
+  {
+      var row = rowindex(obj.parentNode.parentNode);
+      var tbl = document.getElementById('gallery-table');
+
+      tbl.deleteRow(row);
+  }
+  
+    function dropImg(imgId)
+  {
+    Ajax.call('goods.php?is_ajax=1&act=drop_image', "img_id="+imgId, dropImgResponse, "GET", "JSON");
+  }
+
+  function dropImgResponse(result)
+  {
+      if (result.error == 0)
+      {
+          document.getElementById('gallery_' + result.content).style.display = 'none';
+      }
+  }
+</script>
+
+	  
+<script type="text/javascript">   
+function complete(data,status){
+    var moption;
+	moption="<option>选择子类</option>";
+	if (status==1)
+	{
+	for(i=0;i<data[0].length;i++){
+	   moption=moption+'<option value="'+data[1][i]+'">'+data[0][i]+'</option>'; 
+	   	  
+	}
+	$('SubType').innerHTML='<select name="ProjectSubTypeID" id="ProjectSubTypeID">'+moption+'</select>';}
+	else
+	{
+	  $('SubType').innerHTML='<select><option></option></select>'
+	 }
+}
+
+ function InfoSort(){	
+	ThinkAjax.sendForm('EditForm','__URL__/Project_InfoSort',complete,'');
+}     
+</script>
+
+
+<script charset='utf-8' src='/Public/Admin/kindeditor/kindeditor-min.js'></script>
+    <script>
+        var editor;
+            KindEditor.ready(function(K) {
+                editor = K.create('textarea[name="fg_detail"]', {
+                    allowFileManager : true,
+                    width : '700px',
+                    height: '300px',
+                    resizeType: 0    //固定宽高
+                });
+            });
+    </script> 	
+
+</head>
+<body>
+
+<div class='menu'>&nbsp;编辑 &gt; 修改产品</div>
+<style type="text/css">
+th{ width:200px; height:35px;}
+input{ height:30px; width:250px;}
+#checkradio input{ width:30px;}
+</style>
+<div class="content">
+  	<Form name='EditForm' id='EditForm' method='post' action='__URL__/doedit' onSubmit="return ck_Project(this);" enctype="multipart/form-data" >
+
+  <table width="98%" border="0" cellspacing="1" cellpAdding="1" align="center" class="table">
+	  <input name="id" type="hidden" size="30" id="id" value="{<$newsList_info.id>}">
+	   <tr>
+        <th align="center"><font color="#FF0000">*</font>系列</td>
+        <td><select name="sid" >            
+            <volist name="list" id="sel">
+				<option value="{<$sel.id>}" <eq name="sel.id" value="$newsList_info.sid">selected="selected"</eq>>{<$sel.name>}</option>					
+			</volist>
+            </select></td>
+      </tr>
+	  
+	  <tr>
+        <th align="center"><font color="#FF0000">*</font>类型</td>
+        <td><select name="tid" >  
+            <volist name="list1" id="cat">
+				<option value="{<$cat.id>}" <eq name="cat.id" value="$newsList_info.tid">selected="selected"</eq>>{<$cat.name>}</option>					
+			</volist>
+            </select></td>
+      </tr>	  
+	  	  
+	   <tr>
+        <th align="center"><font color="#FF0000">*</font>产品名称（中文）</td>
+        <td><input name="name" type="text" size="30" id="name" value="{<$newsList_info.name>}"></td>
+      </tr>
+	  <tr>
+        <th align="center"><font color="#FF0000">*</font>产品名称（英文）</td>
+        <td><input name="ename" type="text" size="30" id="ename" value="{<$newsList_info.ename>}"></td>
+      </tr>
+	  
+	  <tr>
+        <th align="center"><font color="#FF0000">*</font>型号</td>
+        <td><input name="model" type="text" value="{<$newsList_info.model>}" size="30" id="model"></td>
+      </tr>
+	  
+	    <tr>
+		 <th align="center"><font color="#FF0000">*</font>上传图片：</td>
+         <td>
+           <input type="file" name="pic" size="35" />
+                          <img height="80" src="/Uploads/goods/{<$newsList_info.simg>}" />
+                                               
+         </td>
+      </tr>
+	  
+	  
+	  <tr>
+        <th align="center">规格/型号</td>
+        <td><input name="spec" type="text" value="{<$newsList_info.spec>}" size="30" id="spec"></td>
+      </tr>	  
+	  <tr>
+        <th align="center">尺寸</td>
+        <td><input name="size" type="text" value="{<$newsList_info.size>}" size="30" id="size"></td>
+      </tr>	  
+	  <tr>
+        <th align="center">灯珠规格</td>
+        <td><input name="dspec" type="text" value="{<$newsList_info.dspec>}" size="30" id="dspec"></td>
+      </tr>
+	  <tr>
+        <th align="center">色温</td>
+        <td><input name="colour" type="text" value="{<$newsList_info.colour>}" size="30" id="colour"></td>
+      </tr>
+	  <tr>
+        <th align="center">光通量</td>
+        <td><input name="light" type="text" value="{<$newsList_info.light>}" size="30" id="light"></td>
+      </tr>
+	  <tr>
+        <th align="center">认证</td>
+        <td><input name="ident" type="text" value="{<$newsList_info.ident>}" size="30" id="ident"></td>
+      </tr>
+	  <tr>
+        <th align="center">备注（中文）</td>
+        <td><input name="other" type="text" value="{<$newsList_info.other>}" size="30" id="other"></td>
+      </tr>	
+	  <tr>
+        <th align="center">备注（英文）</td>
+        <td><input name="eother" type="text" value="{<$newsList_info.eother>}" size="30" id="eother"></td>
+      </tr>	 
+	  
+	  	  
+	<!--  <tr>
+        <th align="center">&nbsp;&nbsp;商品简介</td>
+        <td><textarea name="fg_simple" cols="40" >{<$newsList_info.fg_simple>}</textarea></td>
+      </tr>
+	
+	 
+      <tr>
+        <th align="center">&nbsp;&nbsp;商品详细描述</td>
+        <td><textarea name="fg_detail" >{<$newsList_info.fg_detail>}</textarea></td>
+	
+      </tr>-->
+	  
+	   <tr id="checkradio">
+        <th align="center"><font color="#FF0000">*</font>是否推荐</td>
+        <td><input type="radio" name="isrecom" value="1" <eq name="newsList_info.isrecom" value="1">checked="checked"</eq>>是
+		<input type="radio" name="isrecom" value="0" <eq name="newsList_info.isrecom" value="0">checked="checked"</eq>>否</td>
+      </tr>
+	  
+	   <tr>
+        <th align="center"><font color="#FF0000">*</font>排序</td>
+        <td><input name="sort" type="text" value="{<$newsList_info.sort>}" size="30" id="sort"></td>
+      </tr>
+	  
+<!--	  <tr>
+	    <th>&nbsp;&nbsp;商品相册</th><td>
+	  <table width="90%" id="gallery-table" align="center">                 
+          <tr>
+            <td>
+              <a href="javascript:;" onClick="addImg(this)">[+]</a>
+			
+              上传图片<input type="file" name="img_url[]" />
+             
+            </td>
+          </tr>
+     </table>
+	 </td></tr> -->
+	  	  
+	  
+      <tr bgcolor="#FFFFFF">
+        <td>&nbsp;</td>
+        <td align="left"><input type="submit" name="Submit" value="保 存" class="button" > &nbsp;&nbsp; 
+      <input type="button" value="返 回" onClick="history.go(-1);" class="button">
+        </td>
+      </tr>
+  </table>
+      </Form>
+
+  <br>
+</div>
+<br>
+</body>
+</html>

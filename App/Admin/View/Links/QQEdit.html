@@ -1,0 +1,66 @@
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/Admin.css">
+<script type="text/javascript" src="__PUBLIC__/Admin/js/admin.js"></script>
+
+<title>添加链接</title>
+</head>
+<script type="text/javascript">
+ function ckword(){
+   if (document.getElementById("QQContact").value==""){
+             alert("请输入联系人名称");
+			 document.getElementById("QQContact").focus();
+			 return false;
+			 }	
+
+   if (document.getElementById("QQNumber").value==""){
+             alert("请输入QQ号码");
+			 document.getElementById("QQNumber").focus();
+			 return false;
+			 }	
+	
+  }	
+</script>
+<body>
+
+<div class='menu'>&nbsp;编辑&gt;修改链接</div>
+
+<div class="content">
+  <table width="98%" border="0" cellspacing="0" cellpAdding="5" align="center" class="table">
+    <Form name='EditForm' method='post' action='__URL__/EditQQ' onSubmit="return ckword()">
+   	<input name="ID" id="ID" type="hidden" value="{<$links.ID>}">
+    <tr>
+      <th align="center" width="14%"><font color="#FF0000">*</font>联系人:</th>
+      <td><input name="QQContact" type="text" id="QQContact" size="40" value="{<$links.QQContact>}"> 
+      </td>
+    </tr>
+    <tr>
+      <th align="center"><font color="#FF0000">*</font>QQ号码:</th>
+      <td><input name="QQNumber" type="text" id="QQNumber" size="40" value="{<$links.QQNumber>}">  </td>
+    </tr>
+     <tr>
+      <th align="center">&nbsp;&nbsp;联系电话:</th>
+      <td><input name="QQPhone" type="text" id="QQPhone" size="40" value="{<$links.QQPhone>}"> </td>
+    </tr> 
+   
+    <tr>
+      <th align="center">&nbsp;&nbsp;排序:</th>
+      <td><input name="QQOrder" type="text"   size="4" id="QQOrder" value="{<$links.QQOrder>}"></td>
+    </tr>
+    
+    <tr>
+      <td>&nbsp;</th>
+      <td><input type="submit" value="保 存" class="button">
+        &nbsp;&nbsp;
+        <input type="button" value="返 回" onClick="history.go(-1);" class="button">
+      </td>
+    </tr>
+    </form>
+  </table>
+  <br>
+</div>
+<br>
+</body>
+</html>
+                                                                                       

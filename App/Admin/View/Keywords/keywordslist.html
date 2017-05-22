@@ -1,0 +1,78 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/Admin.css">
+<link href="__PUBLIC__/Admin/css/page.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/Admin/js/jquery-1.7.js" language="JavaScript" type="text/javascript" ></script>
+
+<script type="text/javascript" src="__PUBLIC__/Admin/js/admin.js"></script>
+ <script language="javascript" type="text/javascript">
+var oldColor="#ffffff";//原来的颜色
+function trOver(trObj){
+oldColor=trObj.style.backgroundColor;
+trObj.style.backgroundColor="#e9f1f4";
+}
+function trOut(trObj){
+trObj.style.backgroundColor=oldColor;
+}
+
+//---------------检测搜索条件是否为空函数（开始）
+function checkClass(){	
+		 if(document.getElementById("KeyWord").value==""){
+			 alert("标题名称不能为空");
+			 document.getElementById("KeyWord").focus();
+			 return false; 
+			 
+			 }else{
+				 
+				 return true;
+				 }
+		
+		}
+ //----------------------------结束---------------------------		
+ </script>
+<title>文件管理</title>
+</head>
+<body>
+<div class='menu'>&nbsp;查看 &gt; 关键词</div> 
+<form method='get' name='EditForm'   action="">    
+ <!-- <table width="98%" border="0" cellspacing="0" cellpAdding="1"> 
+    <tr>
+      <td align="left">
+        标题
+        <input type='text' name='KeyWord' id='KeyWord' value="">
+        <input type='submit' value='搜索' name='Search' class="button">
+   
+      </td>
+    </tr>
+  </table>-->
+ <a href="__URL__/keywordsadd" ><input  value='添 加' class="button" style="text-align:center;"></a>  
+
+<div class="content" align="center">
+  <table width="100%" border="0" cellspacing="0" cellpAdding="1" bgcolor="#d4d0c8">
+    <tr bgcolor="#FFFFFF" align="center">
+      <td width='10%' class='title'>编号</td>
+      <td width='30%' class='title'>关键词 </td>  
+	  
+	  <td width='20%' class='title'>排序 </td>        
+      <td width='40%' align='center' class='title'>操作 </td>
+      
+    </tr>
+  <volist id="about_info" name="AboutList">   
+    <tr onMouseOver='trOver(this);' onMouseOut='trOut(this);' bgcolor='#ffffff'>
+      <td align='center'>{<$key + 1 >}</td>
+      <td align='center'>{<$about_info.name>}</td>  
+	  
+	  <td align='center'>{<$about_info.sort>}</td>    
+      <td align='center'>
+	 <!-- <a href='__URL__/Abouts/id/{<$about_info.ID>}'>查看</a> |--> <a href='__URL__/keywordsedit/id/{<$about_info.id>}'>修改</a> | <a href='__URL__/DelAbout/id/{<$about_info.id>}' onClick="return confirm('确定要删除吗？')">删除</a></td>
+    </tr>
+ </volist> 
+  </table>
+</div>
+<div class="{<$pagestyle>}">{<$page>}</div>
+</form>
+<br>
+</body>
+</html>
+
+                                                                                       

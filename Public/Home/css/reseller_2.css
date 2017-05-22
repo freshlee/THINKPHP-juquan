@@ -1,0 +1,16 @@
+﻿
+#right_scroll{width:155px;height:650px;top:138px; left:50%; margin-left:550px;position:absolute;display:none;z-index:9999;}
+.right_scroll_bg{width:155px;height:700px;position:absolute;top:0;left:0;z-index:9999;background:url(../images/left.png) no-repeat 0px 0px;_background:none;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/left.png', sizingMethod='crop'); }
+.right_scroll_context{width:155px;height:650px;position:absolute;top:0;left:0;z-index:9999;overflow:hidden;}
+.right_scroll_contextitle{width:155px;height:104px;position:relative;}
+.right_scroll_contextitle_close{position:absolute;top:5px;right:10px;width:14px;height:14px;line-height:14px;display:block;overflow:hidden;text-align:center;background:#acc5db;cursor:pointer;}
+.right_scroll_contextitle_close:link{color:#fff;}
+.right_scroll_contextitle_close:visited{color:#fff;}
+.right_scroll_contextitle_close:hover{color:#fff;}
+.right_scroll_contextitle_phone{width:155px;height:25px;overflow:hidden;position:absolute;top:76px;left:5px;font:bold 15px/27px Arial;color:#ffcc33;}
+.right_scroll_contextxt{padding-top:45px;}
+.right_scroll_contextxt h5{ display:block; list-style:none; font-size:12px; width:125px; height:25px; line-height:25px; background:url(../images/qqclr.png) center no-repeat; text-align:center; color:#534e4d; font-weight:normal; margin:1px auto; }
+.right_scroll_contextxt ul{text-align:center;}
+.right_scroll_contextxt li{ height:24px;color:#666; margin-left:12px; background:url(../images/qqico.png) no-repeat 10px 2px; font:12px/1.5 tahoma,Arial;}
+.right_scroll_contextxt li a{ color:-webkit-link;margin-left:8px;}
+.zhixian{ text-align:center; width:155px; height:60px;}

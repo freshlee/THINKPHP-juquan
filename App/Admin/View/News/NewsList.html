@@ -1,0 +1,83 @@
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+<script src="__PUBLIC__/Admin/js/jquery-1.7.js" language="JavaScript" type="text/javascript" ></script>
+
+<title>hshrj</title>
+</head>
+<body>
+<style type="text/css">
+   .menu{
+       height: 35px;
+       background: url('http://www.server.com/Public/Admin/images/menu_bg.gif');
+       font-size:14px;
+       margin: 0;
+       padding: 12px 0 0 15px; 
+   }
+</style>
+<div class='menu'>&nbsp;查看 &gt; 新闻中心</div>
+<div class="content" align="center">
+<table width="100%" border="0" cellspacing="0" cellpAdding="0" bgcolor="#d4d0c8" class="table table-hover table-bordered">
+<tr bgcolor="#E9F1F4" align="center">
+<td width='5%' class='title'>编号</td>
+<td width='5%' class='title'>ID</td>
+<td class='title' width='10%'>类别</td>
+<td class='title' width='30%'>标题</td>
+<td width='20%' class='title'>发布时间</td>
+
+<td width='10%' class='title'>是否推荐</td>
+
+<td width='5%' class='title'>排序</td>
+<td width='15%'  class='title'>操作</td>
+</tr>
+ <form action="__URL__/modifynews?act=delmulti" method="post" class="form_del"> 
+ <volist id="news" name="news">
+
+<tr align="center">
+ <td align='center'>{<$page*25+$i>}</td>
+  <td align='center'>{<$news.id>}</td>
+  <td>{<$news.InformationType>} </td>
+  <td>{<$news.InformationTitle|msubstr=0,20,'utf-8',false>} </td>
+  <td>{<$news.InformationUpdate>} </td>
+  <td><if condition="$news.IsDes eq 1">是
+  	<else/>否
+  </if>
+  </td>
+  <td>{<$news.InformationOrder>} </td>
+
+  <td align='center'> 
+<a href='__URL__/NewsEdit/InformationID/{<$news.id>}'>修改</a> | 
+<a href='__URL__/modifynews?InformationID={<$news.id>}&act=del' onClick="return confirm('确定要删除吗？')">删除</a> | 
+<input name='CheckBoxID[{<$i>}]' class="checkboxid" id="CheckBoxID"  onClick="" type='checkbox' value='{<$news.id>}'>
+</td>
+  </tr>
+
+ </volist>
+  <form action="___URL__/modifynews?act=delmulti" method="post">  
+  </table>
+</div>
+
+  <div class="ttbom">
+<input  type='button' class="btn btn-default btn-info center-block" value='删除所选'> &nbsp; 
+<input type='checkbox' id="checkall">全选</div>
+<div class="{<$pagestyle>}">{<$page>}</div>
+<!--</form>-->
+  <br>
+  <script>
+  	$("#delselect").click(function(){
+  		  
+          $(".form_del").submit();
+  	})
+  	$("#checkall").click(function(){
+  		var logic=$(this).attr("checked");
+  		$(".checkboxid").attr("checked",function(index,value){
+  			if(logic){value=logic;}
+             else{value=false;}
+          return value;
+  		})
+  		
+  	})
+  </script>
+</body>
+</html>

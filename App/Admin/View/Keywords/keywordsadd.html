@@ -1,0 +1,51 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/Admin.css">
+<script src="__PUBLIC__/editor/kindeditor.js" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/js/Base.js" language="JavaScript" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/js/prototype.js" language="JavaScript" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/js/mootools.js" language="JavaScript" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/js/ThinkAjax.js" language="JavaScript" type="text/javascript" ></script>
+
+<title>查看单页</title>
+ <script type="text/javascript">    
+           KE.show({                      //实例化编辑器 
+           id : 'InformationContent' ,//TEXTAREA输入框的ID 
+		   width:'700px' ,
+		   height:'300px'
+           }); 
+	   
+</script> 
+</head>
+<body>
+<div class='menu'>&nbsp;查看 &gt; 关键词</div>
+<div class="content">
+  <table width="98%" border="0" cellspacing="0" cellpAdding="1" align="center" class="table">
+  <Form action='__MODULE__/Keywords/add'  method='post' enctype="multipart/form-data" >      
+      <tr>
+        <th align="center" width="12%">关键词</th>
+        <td><input name="name"  id="name" type="text" size="20"></td>
+      </tr>
+	      	  
+	  <tr>
+        <th align="center" width="12%">排序</th>
+        <td><input name="sort"  id="sort" type="text" size="20"></td>
+      </tr>
+	  
+	 
+	  
+       <tr bgcolor="#FFFFFF">
+        <td>&nbsp;</td>
+        <td align="left">
+		<input type="submit" value="添加"/> 
+		<input type="button" value="返 回" onClick="history.go(-1);" class="button">
+       </td>
+      </tr>
+    </Form>
+  </table>
+  <br>
+</div>
+<br>
+</body>
+</html>
+                                                                                       

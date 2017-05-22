@@ -1,0 +1,41 @@
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/Admin.css">
+<script type="text/javascript" src="__PUBLIC__/Admin/js/admin.js"></script>
+<title>会员资料</title>
+</head>
+<body>
+
+<div class='menu'>&nbsp;修改 &gt; 基本资料</div>
+<div class="content">
+  <table width="98%" border="0" cellspacing="0" cellpAdding="5" align="center" class="table">
+    <Form name='EditForm' method='post' action="__URL__/EditMemberFast"   >
+	<input type="hidden"  name="UserID" id="UserID" maxlength="20" size="30" value="{<$memlist.UserID>}"   >
+	    <tr>
+        <th width="15%"><font color="#FF0000">*</font>用户名：</th>
+        <td width="85%"><input type="text"  name="UserName" id="UserName" maxlength="20" size="30" value="{<$memlist.UserName>}"   ></td>
+      </tr>
+      <tr>
+        <th><font color="#FF0000">*</font>密&nbsp;&nbsp;&nbsp;码：</th>
+        <td><input type="text"  name="Password" id="Password" maxlength="20" size="30"   >&nbsp;<font color="#FF0000">提示：密码为空的话，即保留原密码。</font></td>
+      </tr>
+	   <tr>
+        <th align="center">&nbsp;&nbsp;备&nbsp;&nbsp;&nbsp;注：</th>
+        <td align="left"><textarea name="remark" cols="40" rows="4">{<$memlist.Remark>}</textarea></td>
+      </tr>	 
+      <tr bgcolor="#FFFFFF">
+        <td>&nbsp;</td>
+        <td align="left"><input type="submit" name="Submit" value="保 存" class="button"> &nbsp;&nbsp; <input type="button" value="返 回" onClick="history.go(-1);" class="button"></td>
+           
+      </tr>  
+    </Form>
+	
+  </table>
+  
+  <br>
+</div>
+<br>
+</body>
+</html>
+                                                                                       

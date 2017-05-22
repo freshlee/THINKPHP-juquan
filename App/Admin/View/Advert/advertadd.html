@@ -1,0 +1,190 @@
+﻿<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/Admin.css">
+
+<script src="__PUBLIC__/Home/js/Base.js" language="JavaScript" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/js/prototype.js" language="JavaScript" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/js/mootools.js" language="JavaScript" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/js/ThinkAjax.js" language="JavaScript" type="text/javascript" ></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/ckmain.js" charset="gb2312"></script>
+<title>添加资质</title>
+<script type="text/javascript" src="__PUBLIC__/Home/js/utils.js"></script>
+<script type="text/javascript">
+ function addImg(obj)
+  {
+      var src  = obj.parentNode.parentNode;
+      var idx  = rowindex(src);
+      var tbl  = document.getElementById('gallery-table');
+      var row  = tbl.insertRow(idx + 1);
+      var cell = row.insertCell(-1);
+      cell.innerHTML = src.cells[0].innerHTML.replace(/(.*)(addImg)(.*)(\[)(\+)/i, "$1removeImg$3$4-");
+  }
+
+  /**
+   * 鍒犻櫎鍥剧墖涓婁紶
+   */
+  function removeImg(obj)
+  {
+      var row = rowindex(obj.parentNode.parentNode);
+      var tbl = document.getElementById('gallery-table');
+
+      tbl.deleteRow(row);
+  }
+  
+    function dropImg(imgId)
+  {
+    Ajax.call('goods.php?is_ajax=1&act=drop_image', "img_id="+imgId, dropImgResponse, "GET", "JSON");
+  }
+
+  function dropImgResponse(result)
+  {
+      if (result.error == 0)
+      {
+          document.getElementById('gallery_' + result.content).style.display = 'none';
+      }
+  }
+</script>
+
+ <script type="text/javascript">    
+          
+		
+		function ck_Project(obj){			
+            fckStr =  KE.html('ProjectContent');    
+			document.getElementById("myimg").value=fckStr.match(/\s*[^>"]*\.(?:png|jpg|bmp|gif|swf)/gm);	
+			if(obj.ProjectType.value=="") 
+            {alert('请选择所属类别！');
+             obj.ProjectType.focus();
+		     return false;	}			
+
+            if(obj.ProjectSubTypeID.value=="") 
+            {alert('请选择所属子类别！');
+             obj.ProjectSubTypeID.focus();
+	     	return false;
+	         }	
+
+           if(obj.ProjectName.value=="") 
+           {alert('请输入资质名称！');
+            obj.ProjectName.focus();
+		    return false;
+	        }	
+		   if(obj.ProductBigPic.value=="") 
+           {alert('请输入资质图片！');
+            obj.ProductBigPic.focus();
+		    return false;
+	        }	
+          if(obj.ProjectSummary.value=="") 
+            {alert('请输入资质概况！');
+            obj.ProjectSummary.focus();
+		     return false;
+	      }	
+			
+			
+			
+		}		   
+</script> 
+	  
+<script type="text/javascript">   
+function complete(data,status){
+    var moption;
+	moption="<option>选择子类</option>";
+	if (status==1)
+	{
+	for(i=0;i<data[0].length;i++){
+	   moption=moption+'<option value="'+data[1][i]+'">'+data[0][i]+'</option>'; 
+	   	  
+	}
+	$('SubType').innerHTML='<select name="ProjectSubTypeID" id="ProjectSubTypeID">'+moption+'</select>';}
+	else
+	{
+	  $('SubType').innerHTML='<select><option></option></select>'
+	 }
+}
+
+ function InfoSort(){	
+	ThinkAjax.sendForm('EditForm','__URL__/Project_InfoSort',complete,'');
+}     
+</script>
+
+
+<script charset='utf-8' src='/Public/Admin/kindeditor/kindeditor-min.js'></script>
+    <script>
+        var editor;
+            KindEditor.ready(function(K) {
+                editor = K.create('textarea[name="sf_detail"]', {
+                    allowFileManager : true,
+                    width : '700px',
+                    height: '300px',
+                    resizeType: 0    //固定宽高
+                });
+            });
+    </script> 	
+
+</head>
+<body>
+<style type="text/css">
+.content table tr td{ height:30px;}
+.content table tr th{ width:150px;}
+</style>
+<div class='menu'>&nbsp;编辑 &gt; 添加商家</div>
+
+<div class="content">
+  	<Form name='EditForm' id='EditForm' method='post' action='__URL__/addadvert' onSubmit="return ck_Project(this);" enctype="multipart/form-data" >
+
+  <table width="98%" border="0" cellspacing="1" cellpAdding="1" align="center" class="table">
+    
+	  
+	  <tr>
+        <th align="center"><font color="#FF0000">*</font>广告位</td>
+        <td><select name="fid" ><option value="0">请选择...</option>             
+            <volist name="list" id="cat">
+				<option value="{<$cat.ads_id>}">{<$cat.ads_name>}</option>					
+			</volist>
+            </select></td>
+      </tr>
+	  
+      <tr>
+        <th align="center"><font color="#FF0000">*</font>广告名称</td>
+        <td><input name="ad_name" type="text" value="" size="30" id="ad_name"></td>
+      </tr>
+	  
+	   <tr>
+		 <th align="center"><font color="#FF0000">*</font>广告图片</td>
+         <td>
+           <input type="file" name="pic" size="35" value=""/>
+                        <!-- <img src="__PUBLIC__/Admin/images/no.gif" />-->
+                                               
+         </td>
+      </tr>
+	  
+	   <tr>
+        <th align="center"><font color="#FF0000">*</font>广告链接</td>
+        <td><input name="ad_link" type="text" value="" size="30" id="ad_link"></td>
+      </tr>
+	  
+		
+	  
+	   <tr>
+        <th align="center"><font color="#FF0000">*</font>是否开启</td>
+        <td><input type="radio" name="ad_onoff" value="1" checked="checked">启用
+		<input type="radio" name="ad_onoff" value="0" >关闭</td>
+      </tr>
+	  
+	   <tr>
+        <th align="center"><font color="#FF0000">*</font>排序</td>
+        <td><input name="ad_sort" type="text" value="50" size="30" id="ad_sort"></td>
+      </tr>
+  
+	  
+      <tr bgcolor="#FFFFFF">
+        <td>&nbsp;</td>
+        <td align="left"><input type="submit" name="Submit" value="保 存" class="button" > &nbsp;&nbsp; 
+       <input type="button" value="返 回" class="button" onClick="javascript:history.back(-1);" /></td>
+      </tr>
+  </table>
+      </Form>
+
+  <br>
+</div>
+<br>
+</body>
+</html>

@@ -1,0 +1,68 @@
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/Admin.css">
+<script type="text/javascript" src="__PUBLIC__/Admin/js/admin.js"></script>
+
+<title>添加链接</title>
+</head>
+<script type="text/javascript">
+ function ckword(){
+   if (document.getElementById("LinkName").value==""){
+             alert("请输入链接名称");
+			 document.getElementById("LinkName").focus();
+			 return false;
+			 }	
+
+   if (document.getElementById("LinkUrl").value==""){
+             alert("请输入链接网址");
+			 document.getElementById("LinkUrl").focus();
+			 return false;
+			 }	
+   if (document.getElementById("LinkName").value==""){
+             alert("请输入链接名称");
+			 document.getElementById("LinkName").focus();
+			 return false;
+			 }	
+	
+  }	
+</script>
+<body>
+
+<div class='menu'>&nbsp;编辑&gt;修改链接</div>
+
+<div class="content">
+  <table width="98%" border="0" cellspacing="0" cellpAdding="5" align="center" class="table">
+    <Form name='EditForm' method='post' action='__URL__/EditFlink' onSubmit="return ckword()">
+	<input name="ID" id="ID" type="hidden" value="{<$links.ID>}">
+    <tr>
+      <th width="14%" align="center"><font color="#FF0000">*</font>链接名称:</th>
+      <td><input name="LinkName" type="text" id="LinkName" size="40" value="{<$links.LinkName>}">
+      </td>
+    </tr>
+    <tr>
+      <th align="center"><font color="#FF0000">*</font>链接网址:</th>
+      <td><input name="LinkUrl" type="text" id="LinkUrl" size="40" value="{<$links.LinkUrl>}"></td>
+    </tr>
+    
+   
+    <tr>
+      <th align="center">&nbsp;&nbsp;链接排序:</th>
+      <td><input name="LinkOrder" type="text"   size="4" id="LinkOrder" value="{<$links.LinkOrder>}"></td>
+    </tr>
+    
+    <tr>
+      <td>&nbsp;</th>
+      <td><input type="submit" value="保 存" class="button">
+        &nbsp;&nbsp;
+        <input type="button" value="返 回" onClick="history.go(-1);" class="button">
+      </td>
+    </tr>
+    </form>
+  </table>
+  <br>
+</div>
+<br>
+</body>
+</html>
+                                                                                       

@@ -1,0 +1,54 @@
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/Admin.css">
+<script src="__PUBLIC__/editor/kindeditor.js" type="text/javascript"></script>
+<title>服务项目编辑</title>
+ <script type="text/javascript">    
+           KE.show({                      //实例化编辑器 
+           id : 'InformationContent' ,//TEXTAREA输入框的ID 
+		   width:'700px' ,
+		   height:'300px'
+           }); 
+      </script> 
+
+</head>
+<body>
+
+<div class='menu'>&nbsp;编辑 &gt; 查看服务项目</div>
+
+<div class="content">
+  <table width="98%" border="0" cellspacing="1" cellpAdding="1" align="center" class="table">
+    <Form name='EditForm' method='post' action='__URL__/VerifyNews'>
+	<input name="NewsCount" id="NewsCount" type="hidden" value="{<$memberlist.NewsCount>}">
+	<input name="InformationID" type="hidden" value="{<$newsList_info.InformationID>}"  id="InformationID">
+      <tr>
+        <th width="12%" align="center">所属类别</td>
+        <td>{<$newsList_info.InformationTypeName>}</td>
+      </tr>
+      <tr>
+        <th align="center">资讯标题</td>
+        <td><input name="InformationTitle" type="text" value="{<$newsList_info.InformationTitle>}" size="60" id="InformationTitle" disabled="disabled"></td>
+      </tr>
+      <tr>
+        <th align="center">资讯来源</td>
+        <td><input name="InformationSource" type="text" id="InformationSource" value="{<$newsList_info.InformationSource>}" disabled="disabled">&nbsp;
+        </td>
+      </tr>
+      <tr>
+        <th align="center">资讯内容</td>
+        <td><textarea name="InformationContent" id="InformationContent" disabled="disabled"> {<$newsList_info.InformationContent>}</textarea></td>
+      </tr>
+      <tr bgcolor="#FFFFFF">
+        <td>&nbsp;</td>
+        <td align="left"><input type="submit" name="Submit" value="审　核" class="button"> &nbsp;&nbsp; 
+        <input type="button" value="返 回" onClick="history.go(-1);" class="button">
+        <input type="hidden" name="InformationID" id="InformationID" value="{<$InformationID>}"><input type="hidden" name="InformationType" id="InformationType" value="{<$newsList_info.InformationTypeID>}"></td>
+      </tr>
+    </Form>
+  </table>
+  <br>
+</div>
+<br>
+</body>
+</html>                                                                                       
