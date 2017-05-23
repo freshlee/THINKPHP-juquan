@@ -11,26 +11,27 @@ class IndexController extends Controller {
     }
    
 
-    function connection(){
+    function econnection(){
             $conres=mysql_connect("localhost","root","root");
             if(!$conres){exit("数据库链接失败");}
             $res=mysql_select_db("education",$conres);
 
         }
         //插入行 测试结果：INSERT INTOtable(name,id)VALUES('lee','2012107210')
-    function add($table,$array){
+    function eadd($table,$array){
+               $this->econnection();
                 $key=join(",", array_keys($array));
                 $value=join("','",array_values($array));
-                $query="INSERT INTO".$table."(".$key.")"."VALUES('".$value."')";
+                $query="INSERT INTO ".$table." ( ".$key." ) "."VALUES ( '".$value."' )";
                 mysql_query($query);
             }
             //生成where;
-    function concretion(&$value,$key){
+    function econcretion(&$value,$key){
                     $value=$key."='".$value."'";
                 }
                 //删除行 测试结果 DELETE FROMtableWHEREname='lee'ANDid='2012107210'
-    function del($table,$where){
-                    
+    function edel($table,$where){
+        $this->econnection();
                  array_walk($where, concretion);
                 $concrete=join("AND", $where);
                 $query="DELETE FROM".$table."WHERE".$concrete;
@@ -42,7 +43,8 @@ class IndexController extends Controller {
                 return $res;
                     }
                     //更新 测试结果 UPDATEtableSETid='2012107210',name='lee'WHEREid='2012107210'
-   function update($table,$data,$where){
+   function eupdate($table,$data,$where){
+                $this->econnection();
                 array_walk($where, concretion);
                 array_walk($data, concretion);
                 $where=join("AND", $where);
@@ -61,7 +63,8 @@ class IndexController extends Controller {
                         
                         
          //查
-    function select($table,$field="*",$where){
+    function eselect($table,$field="*",$where){
+            $this->econnection();
             array_walk($where, concretion);
             $where=join("AND", $where);
             if(is_array($field))
@@ -183,18 +186,25 @@ class IndexController extends Controller {
     
     
     public function EnrollProcess(){
-          $this->connection();
-          $course=$this->select("course");
-          $courselist=$this->select("courselist");
+          $this->econnection();
+          $course=$this->eselect("course");
+          $courselist=$this->eselect("courselist");
           $this->assign("course",$course);
           $this->assign("courselist",$courselist);
           $this->display();
     }
     public function message(){
         $message=new Model('message');
-        $res=$message->create();
-        dump($res);
-        $message->add();
+        $data['course']=join("/", $_POST["course"]);
+        $data['ConsultationDate']=$_POST['ConsultationDate'];
+        $data['period']=$_POST['period'];
+        $data['tel']=$_POST['tel'];
+        $data['Name']=$_POST['Name'];
+        $data['qq']=$_POST['qq'];
+        $data['email']=$_POST['email'];
+        $data['wechat']=$_POST['wechat'];
+        $data['remark']=$_POST['remark'];
+        $this->eadd("message", $data);
         $this->display();
     }
     function ck_adlogin(){  //管理员登录

@@ -5,19 +5,16 @@
 <title>报名流程_美迪电商学院</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<script language="javascript" type="text/javascript" src="__PUBLIC__/Home/js/conn.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery-1.7.js"></script>
 <link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/style_6.css" />
 <link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/pages_6.css" />
-<script type="text/javascript" src="__PUBLIC__/Home/js/nva.js"></script>
-
-
+<link href="__PUBLIC__/Home/css/reseller_7.css" rel="stylesheet" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css" />
 <style type="text/css">
 .intxt{border: 1px solid #dddddd; border-radius: 4px; color: #666; height: 20px; line-height: 20px; padding: 10px 5px; width: 60%;}
 .div_form{margin-bottom:15px; float:left; text-align:right; height:46px; line-height:56px; width:100%; font-weight:bold;}
 .coolbg{width:62%; height:60px; text-align:center; font:bold 16px/60px '宋体'; border:0 none; border-radius:4px; color:#fff; cursor:pointer; background:#009fe3;letter-spacing:6px;}
 .span{padding-right:2%;}
-p[plugin="plugin"]{color: red}
+span[plugin="plugin"]{color: red; display: flex;justify-content: center;}
 </style>
 </head>
 
@@ -309,11 +306,11 @@ p[plugin="plugin"]{color: red}
 		<div class="position">您现在的位置是：<a href='http://www.mede.com.cn'>美迪首页</a> > <a href='/EnrollProcess/'>报名流程</a> > </div>
 		<div class="about_body">
         <h2>网上报名</h2>
-<form class="f1"  method="post" id="applicaion_form">
+<form class="form form-inline"  method="post" id="applicaion_form">
 <table width=100% >
 <tbody>
 <tr ><td width=15% align="right" class="div_form">姓 名：</td>
-<td width="86%" class="right"><input type="text" id="t1" name="Name" class="intxt"></td>
+<td width="86%" class="right"><input type="text" id="t1" name="Name" class="form-control input-sm col-sm-3"></td>
 </tr>
 <tr><td width=15% align="right" class="div_form">报读课程：</td>
 <br />
@@ -374,7 +371,7 @@ p[plugin="plugin"]{color: red}
 <tr ><td width=15% align="right" class="div_form">上课时间：</td>
 <td class="right">
 <!--<input type="text" id="t2" name="sk_time" class="intxt">-->
-<input type="text" name="ConsultationDate" data-date-format="yyyy-mm-dd" class="w-2 date-picker intxt" />
+<input type="text" name="ConsultationDate" data-date-format="yyyy-mm-dd" class="date-picker" />
 </td>
 </tr>
 <tr>
@@ -388,22 +385,42 @@ p[plugin="plugin"]{color: red}
     </td>
 </tr>
 <tr ><td width=15% align="right" class="div_form">电 话：</td>
-<td class="right"><input type="text" id="t3" name="tel" class="intxt"></td>
+<td class="right"><input type="text" id="t3" name="tel" class="col-sm-3 form-control"></td>
 </tr>
 <tr ><td width=15% align="right" class="div_form">Q Q：</td>
-<td class="right"><input type="text" id="t4" name="qq" class="intxt"></td>
+<td class="right"><input type="text" id="t4" name="qq" class="col-sm-3 form-control"></td>
 </tr>
 <tr ><td width=15% align="right" class="div_form">邮箱：</td>
-<td class="right"><input type="text" id="t5" name="email" class="intxt"></td>
+<td class="right"><input type="text" id="t5" name="email" class="col-sm-3 form-control"></td>
 </tr>
 <tr ><td width=15% align="right" class="div_form">微 信：</td>
-<td class="right"><input type="text" id="t6" name="wechat" class="intxt"></td>
+<td class="right"><input type="text" id="t6" name="wechat" class="col-sm-3 form-control"></td>
 </tr>
 <tr><td width=15% align="right" class="div_form">备 注：</td> 
 <td><textarea id="txtarea" name="remark" style="width:100%; height:300px; margin-bottom:15px; border: 1px solid #dddddd; border-radius: 4px; color: #666;"></textarea></td> 
 </tr> 
 <tr><td width=15% align="right" class="div_form"></td>
-<td><input id="Submit1" type="button" class="coolbg" value="立即报名" onclick="check_form();" /> </td>
+<td><button id="Submit1" type="button" class="btn btn-info" >立即报名</button> 
+<!--基于bootsrap的弹出框-->
+<div class="modal fade" id="mymodal-data" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title">提示信息</h4>
+			</div>
+			<div class="modal-body">
+				<p>模态弹出窗主体内容</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				<button type="button" class="btn btn-primary">保存</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+</td>
 </tr> 
 </tr> 
 </tbody> 
@@ -554,8 +571,10 @@ p[plugin="plugin"]{color: red}
 </div>
 </div>
 
-<link href="__PUBLIC__/Home/css/reseller_7.css" rel="stylesheet" type="text/css" media="screen" />
-
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Home/js/conn.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/nva.js"></script>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
 <script type="text/javascript"> 
 var b_v = navigator.appVersion;
 var IE6 = b_v.search(/MSIE 6/i) != -1;
@@ -607,63 +626,157 @@ $(".right_scroll_contextitle_close").click(function(){
 <script type="text/javascript">
 
 $(document).ready(function(){
-	//封装警告函数
+	//封装提示函数
 	function alertinfo(info,element) {
     if (info) {
-        if (!element.next("p[plugin=plugin]").length) {
-            element.after("<p plugin='plugin'>"+info+"</p>");
+        if (!element.next("span[plugin=plugin]").length) {
+            element.after("<span plugin='plugin'>"+info+"</span>");
 
 
         } else {
-            element.next("p[plugin=plugin]").text(info);
+            element.next("span[plugin=plugin]").text(info);
 
         }
     }
  else {
-    if (element.next("p[plugin=plugin]")) {
-        element.next("p[plugin=plugin]").remove();
+    if (element.next("span[plugin=plugin]")) {
+        element.next("span[plugin=plugin]").remove();
 
     }
 }
 
 }
+//封装模糊警告框函数
+function fuzzyalert(message){
+	$("#mymodal-data").modal();
+	$(".modal-body").text(message);
+}
+//检测额邮件
+function checkemail(email){
+	 var regexp=/^[0-9A-Za-z-]+@\w+.com$/;
+	 var res=regexp.test(email);
+	 return res;
+}
+//检测电话
+function checktel(tel){
+	var regexp=/^1[3|4|5|7|8][0-9]{9}$/;
+	 var res=regexp.test(tel);
+	 return res;
+}
+//检查QQ
+function checkqq(qq){
+	var regexp=/^\d{5,10}$/;
+	 var res=regexp.test(qq);
+	 return res;
+}
+function checkwechat(wechat){
+	var regexp=/^\w+$/;
+	 var res=regexp.test(wechat);
+	 return res;
+}
+function checkremark(remark){
+	var regexp=/^\w+$/;
+	 var res=regexp.test(remark);
+	 return res;
+}
+
+
+//验证决定
+var determin=true;
+//v
 	$("input[name=Name]").change(function(){
 	 var name=$(this).val();
 	 var element=$(this);
-	 if(name.length>10){alertinfo("名字长度不能超过10",element)}
+	 if(name.length>10){alertinfo("名字长度不能超过10",element);determin=false}
+	 	else if(name.length==0){alertinfo("请输入名字",element);determin=false}
      else{alertinfo("",element)}
+     	
+
 });
 	$("input[name=email]").change(function(){
 	 var email=$(this).val();
 	 var element=$(this);
-	 var regexp=/^[0-9A-Za-z-]+@\w+.com$/;
-	 var res=regexp.test(email);
-	 console.log(res);
-	 if(!res){alertinfo("邮件格式不对",element)}
+	 var res=checkemail(email);
+	 if(!res){alertinfo("邮件格式不对",element);determin=false}
      else{alertinfo("",element)}
+     
+});
+	$("input[name=tel]").change(function(){
+	 var tel=$(this).val();
+	 var element=$(this);
+	 var res=checktel(tel);
+	 if(!res){alertinfo("电话号码格式不对",element);determin=false}
+     else{alertinfo("",element)}
+     
+});
+	$("input[name=qq]").change(function(){
+	 var qq=$(this).val();
+	 var element=$(this);
+	 var res=checkqq(qq);
+	 if(!res){alertinfo("电话号码格式不对",element);determin=false}
+     else{alertinfo("",element)}
+     	
+});
+	$("input[name=wechat]").change(function(){
+	 var wechat=$(this).val();
+	 var element=$(this);
+	 var res=checkwechat(wechat);
+	 if(!res){alertinfo("请输入微信号",element);determin=false}
+     else{alertinfo("",element)}
+     	
+});
+	$("textarea[name=remark]").change(function(){
+	 var remark=$(this).val();
+	 var element=$(this);
+	 var res=checkremark(remark);
+	 if(!res){alertinfo("说点什么吧~~",element);determin=false}
+     else{alertinfo("",element)}
+     	
+});
+	$("input[name=Con]").change(function(){
+	 var remark=$(this).val();
+	 var element=$(this);
+	 var res=checkremark(remark);
+	 if(!res){alertinfo("说点什么吧~~",element);determin=false}
+     else{alertinfo("",element)}
+     	
 });
 
+
+
 	$("#Submit1").click(function(){
+		  determin=true;
+		  $("input").trigger("change");
+		  $("textarea").trigger("change");
 		var allcheckbox=$("input[name='course[]']:checked");
 		if(!allcheckbox.length){
-			var element=$("tbody tr:eq(1)");
-			alert("请选择课程")
-			alertinfo("请选择课程",element);
-			return false;}
-        var elements=$("input").not("checkbox");
+			fuzzyalert("请先选择课程");
+			return false;
+			}
+		if(!determin){
+			fuzzyalert("请检查信息是否正确")
+			return false;
+		}
+        var elements=$("input[name='course[]']").not("checkbox");
         elements.each(function(){
              if(!$(this).val()){
-             	alert("请输入完整信息");
+             	fuzzyalert("请输入完整信息");
+             	alertinfo("请输入完整信息");
              	return false;
              	}
         });
-        $("about.html")
 	     $.ajax({
 
 	 	url:"__URL__/message",
 	 	type:"POST",
 	 	data:$(this).parents("form").serialize(),
-	 	async:false,        
+	 	async:false, 
+	 	success:function(){
+	 		fuzzyalert("已经上传到后台");
+	 	},
+	 	error:function(){
+	 		fuzzyalert("上传失败");
+	 	}      
 	 })
 
 	});
