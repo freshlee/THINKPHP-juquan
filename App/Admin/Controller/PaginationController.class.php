@@ -118,7 +118,10 @@ function modteacher() {
     }
     public function delEnvironmentCase(){
         $case=new Model('environment_display_case');
+        $caselist=new Model('environmenmt_display_list');
         $where['id']=$_REQUEST['index'];
+        $where2['listCase']=$_REQUEST['index'];
+        $caselist->where($where2)->delete();
         $res=$case->where($where)->delete();
         if($res||$res===0){$this->redirect("environment");}
         else{$this->error("删除模块失败");}

@@ -9,14 +9,21 @@ class MessageController extends CommonController{
             foreach ($data[$key]['course'] as $subkey=>$subvalue){
                 $where['id']=$data[$key]['course'][$subkey];
                 $res=$this->eselect("course","*", $where);
-                $data[$key]['course'][$subkey]=$res[0]['coursename'];
-                 
+                $data[$key]['course'][$subkey]=$res[0]['coursename'];                 
             }
         }
-
-        dump($data);
-        $this->assign("message",$data);
-        
+        $this->assign("message",$data);        
         $this->display();
     }
-}
+    public function delmessage(){
+    if (!$_REQUEST['id']){
+        $this->error("非法操作，缺少ID请求");
+    }
+    else{$where['id']=$_REQUEST['id'];}
+        $res=$this->edel("message", $where);
+        if($res||$res===0){
+            $this->redirect("message");
+        }else {$this->error("删除失败");}
+            
+    }
+}  

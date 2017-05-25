@@ -45,12 +45,11 @@ class CommonController extends Controller{
         $value=$key."='".$value."'";
     });
         $concrete=join("AND", $where);
-        $query="DELETE FROM".$table."WHERE".$concrete;
-        $result=mysql_query($query);
-        $res=array();
-        while ($row=mysql_fetch_array($result)){
-            array_push($res, $row);
+        if($concrete){
+            $concrete=" WHERE ".$concrete;
         }
+        $query="DELETE FROM ".$table.$concrete;
+        $res=mysql_query($query);
         return $res;
     }
     //更新 测试结果 UPDATEtableSETid='2012107210',name='lee'WHEREid='2012107210'

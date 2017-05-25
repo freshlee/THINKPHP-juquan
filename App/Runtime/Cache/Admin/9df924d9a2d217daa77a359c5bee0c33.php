@@ -249,7 +249,7 @@ $(".cell:eq(3)").mouseover(function(){
  $(".subcell:eq(2) a").text("管理");
 })
 $(".cell:eq(4)").mouseover(function(){
- $(".subcell:eq(0) a").attr("href","/Admin/Liuyan/liuyanlist");
+ $(".subcell:eq(0) a").attr("href","/Admin/message/message");
  $(".subcell:eq(0) a").text("报名信息");
   $(".subcell:eq(1) a").attr("href","");
  $(".subcell:eq(1) a").text("");

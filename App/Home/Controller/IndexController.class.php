@@ -95,7 +95,6 @@ class IndexController extends Controller {
         $this->assign("news",$data);
         $this->assign('act_show',"news");
         $this->display();
-;
         }
         else  {
         if($_REQUEST['cate']){
@@ -148,9 +147,10 @@ class IndexController extends Controller {
         $coursename=$courselist->where($where)->select();
         $coursename=$coursename[0];
         $this->assign("coursename",$coursename);
+        $condition['teacherfield']=$coursename['coursename'];
         //输出课程教师
         $teacher=new Model('teacher');
-        $teacher_data=$teacher->select();
+        $teacher_data=$teacher->where($condition)->select();
         $this->assign("teacher",$teacher_data);
         //输出style
         $style=new Model('style');

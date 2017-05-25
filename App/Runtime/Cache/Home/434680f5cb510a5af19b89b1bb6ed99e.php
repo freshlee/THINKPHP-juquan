@@ -327,7 +327,7 @@
 		<div class="about_type_title"><h3>干货分享</h3></div>
 		<ul>
 		
-		<?php if(is_array($cate)): $i = 0; $__LIST__ = $cate;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$catelist): $mod = ($i % 2 );++$i;?><li class="about_left_list"><a href='/share/cate/<?php echo ($catelist["catename"]); ?>'><?php echo ($catelist["catename"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+		<?php if(is_array($cate)): $i = 0; $__LIST__ = $cate;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$catelist): $mod = ($i % 2 );++$i;?><li class="about_left_list"><a href='/share/cate/<?php echo ($catelist["id"]); ?>'><?php echo ($catelist["catename"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
 				
 		</ul>
 		</div>
